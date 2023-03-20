@@ -13,7 +13,7 @@ class Booking extends Model
         return $this ->BelongsTo(Customer::class);
     }
     public function customization(){
-        return $this ->hasMany(Booking::class);
+        return $this ->hasMany(Customization::class);
     }
     public function merchandise(){
         return $this ->hasMany(Merchandise::class);
