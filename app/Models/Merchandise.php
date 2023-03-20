@@ -11,4 +11,7 @@ class Merchandise extends Model
     public function customization(){
         return $this ->hasMany(Customization::class);
     }
+    public function booking(){
+        return $this ->hasOne(Booking::class);
+    }
 }
