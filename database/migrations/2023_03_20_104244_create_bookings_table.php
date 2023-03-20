@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
+            $table->integer('customer_id');
+            $table->integer('event_id');
+            $table->integer('customization');
+            $table->integer('merchandise_id');
             $table->timestamps();
         });
     }
