@@ -90,10 +90,10 @@
         <li>lorem</li>
         </div>
     </div>
-    <div class = "why">
-        
+    <div class = "why" style="width: 10%">
+        <p>WHY SHOREDITCH?
+            We chose Shoreditch for our East End food tour because of the area's history, culture, street art and wonderful food stalls. A once exotic outdoor market that sold wild animals such as lions has changed dramatically over the years, and is now home to all sorts of stalls selling food, drink, artisanal products, and vintage clothing. The area is a hotspot for locals and tourists who flock here to experience the indoor and outdoor food stands, as well as browse all the unique pieces. It truly is an experience to remember.</p>
     </div>
-
 
 </body>
 </html>
