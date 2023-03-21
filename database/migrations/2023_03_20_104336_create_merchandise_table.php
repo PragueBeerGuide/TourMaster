@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('merchandise', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->timestamps();
+            $table->timestamps();             
         });
     }
 
