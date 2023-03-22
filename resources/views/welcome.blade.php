@@ -4,16 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>TourMasters</title>
+        <title>TourMaster</title>
 
       
     </head>
     <body class="antialiased">
-        
        <div id='root'></div>
 
        @viteReactRefresh
        @vite('resources/js/src/main.jsx')
-
     </body>
 </html>
