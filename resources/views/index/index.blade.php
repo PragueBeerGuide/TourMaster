@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Prague Beer Tours</title>
+    <link rel="stylesheet" href="../../css/app..css">
 </head>
 <body>
-    <nav className="header">
+    <h1 class="text-3xl font-bold underline">
+        Hello world!
+    </h1>
+
+    <nav class="header">
         <ul
-            className="header_links"
+            class="header_links"
             style="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         >
             <li className="header_links-select">Private Tours</li>
