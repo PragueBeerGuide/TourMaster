@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\index;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/beer-tours', [index::class, 'front']);
+
+Route::get('/home', [HomeController::class, 'home'])->middleware('auth')->name('home');

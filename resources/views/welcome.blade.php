@@ -13,5 +13,21 @@
 
        @viteReactRefresh
        @vite('resources/js/src/main.jsx')
+<<<<<<< HEAD
+=======
+
+    <a
+        href="{{ route('login') }}"
+        class="login"
+    >
+        Log in
+    </a>
+    <a
+        href="{{ route('register') }}"
+        class="register"
+    >
+        Register
+    </a>
+>>>>>>> main
     </body>
 </html>
