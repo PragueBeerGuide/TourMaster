@@ -2,6 +2,9 @@
 
 @section('content')
 
-<h1>Welcome back, {{ $user->name }}</h1>
+    <div id='root'></div>
+
+    @viteReactRefresh
+    @vite('resources/js/src/main.jsx')
 
 @endsection

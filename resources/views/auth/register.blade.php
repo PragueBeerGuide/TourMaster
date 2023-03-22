@@ -4,6 +4,10 @@
 
 <h1>Register</h1>
 
+{{-- @if(!Auth::user())
+    <div>nejsi prihlasen</div>
+@endif --}}
+
 <form action="{{ route('register') }}" method="post">
 
     @csrf
