@@ -4,10 +4,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>test</title>
+        <title>TourMasters</title>
 
+      
     </head>
     <body class="antialiased">
+        
+       <div id='root'></div>
+
+       @viteReactRefresh
+       @vite('resources/js/src/main.jsx')
+
     <a
         href="{{ route('login') }}"
         class="login"

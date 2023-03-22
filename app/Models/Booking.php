@@ -12,9 +12,7 @@ class Booking extends Model
     public function customer(){
         return $this ->BelongsTo(Customer::class);
     }
-    public function customization(){
-        return $this ->hasMany(Customization::class);
-    }
+
     public function merchandise(){
         return $this ->hasMany(Merchandise::class);
     }
