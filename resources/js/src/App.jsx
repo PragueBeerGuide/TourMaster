@@ -1,14 +1,15 @@
 import Calendar from 'react-calendar';
-import { Button } from "@material-tailwind/react";
+import StickyNavbar from '../components/navbar/Navbar';
 
 function App() {
 
   return (
 
     <div className="App">
+      <StickyNavbar/>
       <Calendar/>
     </div>
   )
 }
 
-export default App
+export default App;
