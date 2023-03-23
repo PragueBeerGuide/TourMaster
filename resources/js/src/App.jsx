@@ -10,8 +10,7 @@ function App() {
 
     <div className="App">
       <StickyNavbar/>
-      <Hero/>
-      <Calendar/> 
+      <Calendar/>
     </div>
   )
 }
