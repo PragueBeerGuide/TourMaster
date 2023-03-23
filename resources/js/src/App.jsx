@@ -1,12 +1,18 @@
-import Calendar from "react-calendar";
-import { Button } from "@material-tailwind/react";
+import StickyNavbar from "../components/navbar/StickyNavbar";
 
 function App() {
-    return (
-        <div className="App">
-            <Calendar />
-        </div>
-    );
+
+  return (
+    <>
+      <StickyNavbar />
+      <div className="bg-red-400">
+          <h1 className="text-4xl font-bold underline">
+            Hello world!
+          </h1>
+          <p className="text-slate-600 text-xl">I wish this Tailwinf styling would finally work....</p>
+      </div>
+    </>
+  )
 }
 
 export default App;
