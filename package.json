@@ -14,10 +14,12 @@
     },
     "dependencies": {
         "@heroicons/react": "^2.0.16",
+        "@material-tailwind/react": "^1.4.2",
         "@vitejs/plugin-react": "^3.1.0",
         "react": "^18.2.0",
         "react-calendar": "^4.0.0",
         "react-dom": "^18.2.0",
-        "react-router-dom": "^6.9.0"
+        "react-router-dom": "^6.9.0",
+        "react-scripts": "^5.0.1"
     }
 }
