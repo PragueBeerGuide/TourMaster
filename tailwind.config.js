@@ -1,15 +1,10 @@
-const withMT = require("@material-tailwind/react/utils/withMT");
-
-module.exports = withMT({
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
-    "./resources/**/*.{blade.php, html, js, jsx, vue}",
+    "./resources/**/*.{blade.php, js, jsx}",
   ],
   theme: {
     extend: {},
-    colors: {
-      'logo-purple': '#3b44ac',
-      'logo-orange': '#ff8136',
-    }
   },
   plugins: [],
-});
+}

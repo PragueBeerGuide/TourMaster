@@ -1,14 +1,12 @@
-import Calendar from 'react-calendar';
-import StickyNavbar from '../components/navbar/Navbar';
+import "../../css/app.css";
 
 function App() {
 
   return (
 
-    <div className="App">
-      <StickyNavbar/>
-      <Calendar/>
-    </div>
+    <h1 className="text-4xl font-bold underline">
+      Hello world!
+    </h1>
   )
 }
 
