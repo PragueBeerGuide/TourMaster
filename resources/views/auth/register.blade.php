@@ -4,10 +4,6 @@
 
 <h1>Register</h1>
 
-{{-- @if(!Auth::user())
-    <div>nejsi prihlasen</div>
-@endif --}}
-
 <form action="{{ route('register') }}" method="post">
 
     @csrf
@@ -26,10 +22,6 @@
 
     Confirm password:<br>
     <input type="password" name="password_confirmation" value=""><br>
-    <br>
-
-    Permission:<br>
-    <input type="permission" name="permission" value="{{ old('permission') }}"><br>
     <br>
 
     <button>Register</button>
