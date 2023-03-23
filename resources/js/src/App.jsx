@@ -1,12 +1,17 @@
-import "../../css/app.css";
+import StickyNavbar from "../components/navbar/StickyNavbar";
 
 function App() {
 
   return (
-
-    <h1 className="text-4xl font-bold underline">
-      Hello world!
-    </h1>
+    <>
+      <StickyNavbar />
+      <div className="bg-red-400">
+          <h1 className="text-4xl font-bold underline">
+            Hello world!
+          </h1>
+          <p className="text-slate-600 text-xl">I wish this Tailwinf styling would finally work....</p>
+      </div>
+    </>
   )
 }
 
