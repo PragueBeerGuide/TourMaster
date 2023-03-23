@@ -45,7 +45,7 @@ import {
    
   return (
    
-  <Tabs value="html">
+  <Tabs value="highlightes">
     <TabsHeader>
       {data.map(({ label, value }) => (
         <Tab key={value} value={value}>

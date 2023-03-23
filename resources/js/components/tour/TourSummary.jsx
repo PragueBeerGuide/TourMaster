@@ -1,3 +1,6 @@
+import React, { useState } from 'react';
+import TourDetail from "./TourDetail";
+
 import {
     Card,
     CardHeader,
@@ -17,9 +20,10 @@ import {
     UserGroupIcon,
     TicketIcon,
   } from "@heroicons/react/24/solid";
-import TourDetail from "./TourDetail";
    
   export default function TourSummary() {
+    const [openDetails, setOpenDetails] = useState(false);
+
     return (
       <>
         <Card className="w-full max-w-[30rem] shadow-lg">
@@ -52,7 +56,7 @@ import TourDetail from "./TourDetail";
               </Typography>
             </div>
             <Typography color="gray">
-              Discover the best hidden local carefully selected by a beer sommelier pubs and enjoy some of the finest Czech beers in a great company.
+              Discover the best hidden local pubs carefully selected by a beer sommelier and enjoy some of the finest Czech beers in a great company.
             </Typography>
             <div className="group mt-8 flex justify-around items-center gap-3">
               <Tooltip content="$59 per person">
@@ -83,13 +87,21 @@ import TourDetail from "./TourDetail";
             </div>
           </CardBody>
           <CardFooter className="pt-3">
-            <Button size="lg" fullWidth={true}>
-              More details
+            <Button size="lg" fullWidth={true} 
+              onClick={() => setOpenDetails(!openDetails)}
+              > 
+              {!openDetails ?
+              "More details"
+              :
+              "Hide details"}
+
             </Button>
           </CardFooter>
         </Card>
-        
+        {openDetails ?
         <TourDetail />
+        :
+        ""}
       </>
     );
   }
