@@ -6,7 +6,7 @@
         <title>TourMasters</title>
         
     </head>
-    <body class="antialiased">
+    <body class="antialiased bg-slate-800">
         
        <div id='root'></div>
 
