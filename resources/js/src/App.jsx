@@ -1,25 +1,12 @@
-import StickyNavbar from '../components/navbar/StickyNavbar';
-import BookingEvent from '../components/calendars/BookingEvent';
-import DemoComponent from '../components/calendars/DatePicker';
-import Tour from '../components/tour/Tour';
+import "../../css/app.css";
 
 function App() {
 
   return (
 
-    <div>
-      <StickyNavbar />
-
-      <div className='flex mt-4'>
-        <div>
-          <Tour />
-        </div>
-        <div className='flex flex-col max-w-xs shadow-lg'>
-          <DemoComponent />
-        </div> 
-      </div>  
-
-    </div>
+    <h1 className="text-4xl font-bold underline">
+      Hello world!
+    </h1>
   )
 }
 

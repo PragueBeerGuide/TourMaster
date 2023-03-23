@@ -1,6 +1,6 @@
 export default function Tour() {
 
     return (
-        <div>Tour description</div>
+        <h2>Tour desc...</h2>
     )
 }
