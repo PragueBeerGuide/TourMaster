@@ -1,9 +1,8 @@
-export function footer() {
+export default function Footer() {
     return (
         <>
             <footer>
-                &copy;Charlie, Lukas, and Martin. All Rights Reserved. we have
-                lawyers.
+                &copy;Charlie, Lukas, and Martin. All Rights Reserved. Our lawyers told us so.
             </footer>
         </>
     );

@@ -1,10 +1,11 @@
 import StickyNavbar from "../components/navbar/StickyNavbar";
-
+import { Booking } from "../components/calendars/Calendar";
 function App() {
 
   return (
     <>
       <StickyNavbar />
+      <Booking/>
       <div className="bg-red-400">
           <h1 className="text-4xl font-bold underline">
             Hello world!
