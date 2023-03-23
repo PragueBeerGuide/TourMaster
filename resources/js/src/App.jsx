@@ -1,5 +1,6 @@
 import StickyNavbar from "../components/navbar/StickyNavbar";
-import Tour from "../components/tour/Tour";
+import TourSummary from "../components/tour/TourSummary";
+import Footer from "../components/footer/Footer";
 
 function App() {
 
@@ -12,7 +13,9 @@ function App() {
           </h1>
           <p className="text-slate-600 text-xl">I wish this Tailwind styling would finally work....</p>
       </div>
-      <Tour />
+      <TourSummary />
+
+      <Footer />
     </>
   )
 }
