@@ -1,5 +1,8 @@
 import Calendar from 'react-calendar';
-import StickyNavbar from '../components/navbar/Navbar';
+import { Hero } from '../components/header/Header';
+import StickyNavbar from '../components/navbar/Navbar'
+
+
 
 function App() {
 
@@ -7,7 +10,8 @@ function App() {
 
     <div className="App">
       <StickyNavbar/>
-      <Calendar/>
+      <Hero/>
+      <Calendar/> 
     </div>
   )
 }

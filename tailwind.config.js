@@ -5,7 +5,9 @@ module.exports = withMT({
     "./resources/**/*.{blade.php, html, js, jsx, vue}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      'hero-pattern': "url('public/images/stock-photo-hands-hold-beverage-beers-bottle-cheers-560892721.jpg')"
+    },
     colors: {
       'logo-purple': '#3b44ac',
       'logo-orange': '#ff8136',
