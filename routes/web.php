@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\index;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,7 @@ Route::get('/', function () {
 Route::get('/beer-tours', [index::class, 'front']);
 
 Route::get('/home', [HomeController::class, 'home'])->middleware('auth')->name('home');
+
+Route::get('/show-admin/{id}', [AdminController::class, 'show'])->name('show-admin');
+
+Route::post('/store-admin/edit/{id}', [AdminController::class, 'store'])->name('store-admin');
