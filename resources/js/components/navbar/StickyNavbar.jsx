@@ -26,8 +26,8 @@ export default function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          Pages
+        <a href="/" className="flex items-center">
+          Home
         </a>
       </Typography>
       <Typography
@@ -36,8 +36,8 @@ export default function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          Account
+        <a href="/tours" className="flex items-center">
+          Tours
         </a>
       </Typography>
       <Typography
@@ -46,8 +46,8 @@ export default function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          Blocks
+        <a href="#" className="cursor-not-allowed flex items-center">
+          Blog
         </a>
       </Typography>
       <Typography
@@ -56,8 +56,18 @@ export default function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          Docs
+        <a href="#" className="cursor-not-allowed flex items-center">
+          About
+        </a>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        <a href="#" className="cursor-not-allowed flex items-center">
+          Contact
         </a>
       </Typography>
     </ul>
@@ -69,10 +79,10 @@ export default function StickyNavbar() {
         <div className="flex items-center justify-between text-blue-gray-900">
           <Typography
             as="a"
-            href="#"
+            href="/"
             className="mr-4 cursor-pointer py-1.5 font-medium"
           >
-            Material Tailwind
+            Logo placeholder
           </Typography>
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
@@ -81,7 +91,7 @@ export default function StickyNavbar() {
               size="sm"
               className="hidden lg:inline-block"
             >
-              <span>Buy Now</span>
+              <span>Book Now</span>
             </Button>
             <IconButton
               variant="text"
@@ -125,7 +135,7 @@ export default function StickyNavbar() {
         <MobileNav open={openNav}>
           {navList}
           <Button variant="gradient" size="sm" fullWidth className="mb-2">
-            <span>Buy Now</span>
+            <span>Book Now</span>
           </Button>
         </MobileNav>
       </Navbar>
