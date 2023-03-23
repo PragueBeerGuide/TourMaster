@@ -15,14 +15,7 @@ export function Booking(){
       }
 return (
     <>
-      
-     
           <Calendar  value={dateState} onChange={changeDate} />
-       
-   
-
-
-   
    </>
 
 )
