@@ -16,7 +16,7 @@ export function Booking(){
         setDateState(e)
       }
 return (
-    <div className="w-full max-w-[30rem] shadow-lg flex flex-col items-center">
+    <div className="w-full max-w-[30rem] shadow-lg flex flex-col items-center py-12">
         <Calendar
             value = {dateState} 
             onChange = {changeDate}  
