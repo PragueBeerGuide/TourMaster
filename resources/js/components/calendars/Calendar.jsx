@@ -16,7 +16,7 @@ export function Booking(){
         setDateState(e)
       }
 return (
-    <div className="w-full max-w-[30rem] shadow-lg">
+    <div className="w-full max-w-[30rem] shadow-lg flex flex-col items-center">
         <Calendar
             value = {dateState} 
             onChange = {changeDate}  
@@ -24,7 +24,7 @@ return (
             minDetail = 'month'
         />
           
-        <p>You've selected <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
+        <p className="my-4">You've selected <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
 
         <ListOfEvents />
     </div>
