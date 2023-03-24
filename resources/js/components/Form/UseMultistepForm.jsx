@@ -26,9 +26,9 @@ import {
     const FormTitles = ["Sign Up", "Personal Info", "Other"];
     const PageDisplay = () => {
     if (page === 0) {
-        return <SignUpInfo formData={formData} setFormData={setFormData} />;
-      } else if (page === 1) {
         return <PersonalInfo formData={formData} setFormData={setFormData} />;
+      } else if (page === 1) {
+        return <SignUpInfo formData={formData} setFormData={setFormData} />;
       };
     }
   
