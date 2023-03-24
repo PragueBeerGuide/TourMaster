@@ -21,26 +21,18 @@ export function Booking() {
     const [openDetails, setOpenDetails] = useState(false);
 
     const changeDate = (e) => {
-        setDateState(e);
-        setOpenDetails(e);
-    };
-
-    return (
-        <div className="w-full max-w-[30rem] shadow-lg">
-            <Calendar
-                value={dateState}
-                onChange={changeDate}
-                minDate={new Date()}
-                minDetail="month"
-            />
-
-            <p>
-                You've selected{" "}
-                <b>{moment(dateState).format("MMMM Do YYYY")}</b>
-            </p>
-
-            {openDetails ? <ListOfEvents /> : null}
-            <Form/>
+        setDateState(e)
+      }
+return (
+    <div className="w-full max-w-[30rem] shadow-lg">
+        <Calendar
+            value = {dateState} 
+            onChange = {changeDate}  
+            minDate = {new Date()} 
+            minDetail = 'month'
+        />
+          
+        <p>You've selected <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
 
         </div>
     );
