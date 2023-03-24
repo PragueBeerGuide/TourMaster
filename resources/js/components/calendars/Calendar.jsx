@@ -4,6 +4,7 @@ import { Calendar } from "react-calendar";
 import 'react-calendar/dist/Calendar.css';
 import DatePicker from "react-date-picker";
 import moment from 'moment';
+import ListOfEvents from "./ListOfEvents";
 
 
 
@@ -20,6 +21,7 @@ return (
           <Calendar  value={dateState} onChange={changeDate} />
           
           <p>You've selected <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
+          <ListOfEvents />
    </>
 
 )
