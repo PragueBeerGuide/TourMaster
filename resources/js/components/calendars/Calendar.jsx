@@ -12,17 +12,21 @@ import ListOfEvents from "./ListOfEvents";
 export function Booking(){
     const [dateState, setDateState] = useState(new Date())
     
-
     const changeDate = (e) => {
         setDateState(e)
       }
 return (
-    <>
-          <Calendar  value={dateState} onChange={changeDate} />
+    <div className="w-full max-w-[30rem] shadow-lg">
+        <Calendar
+            value = {dateState} 
+            onChange = {changeDate}  
+            minDate = {new Date()} 
+            minDetail = 'month'
+        />
           
-          <p>You've selected <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
-          <ListOfEvents />
-   </>
+        <p>You've selected <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
 
-)
+        <ListOfEvents />
+    </div>
+    )
 }
