@@ -79,7 +79,7 @@ import {
               </Tooltip>
             </div>
           </CardBody>
-          <CardFooter className="flex flex-wrap justify-around pt-3">
+          <CardFooter className="flex justify-between md:justify-around pt-3 gap-4">
             <Button size="lg" className="flex justify-center items-center gap-1"
               onClick={() => setOpenDetails(!openDetails)}
               > 
