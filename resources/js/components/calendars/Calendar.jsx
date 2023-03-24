@@ -11,13 +11,13 @@ import moment from 'moment';
 export function Booking(){
     const [dateState, setDateState] = useState(new Date())
     
-
     const changeDate = (e) => {
         setDateState(e)
       }
 return (
     <>
-          <Calendar  value={dateState} onChange={changeDate} />
+          <Calendar  value={dateState} onChange={changeDate}  
+  minDate={new Date()} minDetail='month'/>
           
           <p>You've selected <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
    </>
