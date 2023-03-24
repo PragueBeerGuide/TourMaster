@@ -34,6 +34,7 @@ export function Booking() {
                 minDetail="month"
             />
 
+
             <p>
                 You've selected{" "}
                 <b>{moment(dateState).format("MMMM Do YYYY")}</b>
@@ -41,6 +42,23 @@ export function Booking() {
 
             {openDetails ? <ListOfEvents /> : null}
             <Form/>
+
+export function Booking(){
+    const [dateState, setDateState] = useState(new Date())
+    
+    const changeDate = (e) => {
+        setDateState(e)
+      }
+return (
+    <div className="w-full max-w-[30rem] shadow-lg flex flex-col items-center py-12">
+        <Calendar
+            value = {dateState} 
+            onChange = {changeDate}  
+            minDate = {new Date()} 
+            minDetail = 'month'
+        />
+          
+        <p className="my-4">You've selected <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
 
         </div>
     );

@@ -11,12 +11,12 @@ import {
     Tooltip,
   } from "@material-tailwind/react";
   import {
+    ArrowRightCircleIcon,
     ArrowUturnDownIcon,
     ArrowUturnUpIcon,
     BanknotesIcon,
     CalendarDaysIcon,
     ChatBubbleBottomCenterTextIcon,
-    ForwardIcon,
     StarIcon,
     UserGroupIcon,
     TicketIcon,
@@ -91,7 +91,7 @@ import {
 
             </Button >
             <Button size="lg" className={`flex justify-center items-center gap-4 ${openDetails ? "bg-red-700" : ''} `}>
-              Book now <ForwardIcon className="h-4 w-4"/>
+              Book now <ArrowRightCircleIcon className="h-4 w-4"/>
             </Button>
           </CardFooter>
         </Card>
