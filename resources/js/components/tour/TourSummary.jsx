@@ -1,3 +1,6 @@
+import React, { useState } from 'react';
+import TourDetail from "./TourDetail";
+
 import {
     Card,
     CardHeader,
@@ -6,37 +9,31 @@ import {
     Typography,
     Button,
     Tooltip,
-    IconButton,
   } from "@material-tailwind/react";
   import {
+    ArrowUturnDownIcon,
+    ArrowUturnUpIcon,
     BanknotesIcon,
     CalendarDaysIcon,
     ChatBubbleBottomCenterTextIcon,
+    ForwardIcon,
     StarIcon,
-    HeartIcon,
     UserGroupIcon,
     TicketIcon,
   } from "@heroicons/react/24/solid";
-import TourDetail from "./TourDetail";
    
   export default function TourSummary() {
+    const [openDetails, setOpenDetails] = useState(false);
+
     return (
-      <>
-        <Card className="w-full max-w-[30rem] shadow-lg">
+      <div className="w-full max-w-[30rem] shadow-lg">
+        <Card>
           <CardHeader floated={false} color="blue-gray">
             <img
               src="https://cdn.pixabay.com/photo/2022/11/15/11/31/beer-7593794__480.jpg"
               alt="beer tasting"
             />
             <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
-            <IconButton
-              size="sm"
-              color="red"
-              variant="text"
-              className="!absolute top-4 right-4 rounded-full"
-            >
-              <HeartIcon className="h-6 w-6" />
-            </IconButton>
           </CardHeader>
           <CardBody>
             <div className="mb-3 flex items-center justify-between">
@@ -52,7 +49,7 @@ import TourDetail from "./TourDetail";
               </Typography>
             </div>
             <Typography color="gray">
-              Discover the best hidden local carefully selected by a beer sommelier pubs and enjoy some of the finest Czech beers in a great company.
+              Discover the best hidden local pubs carefully selected by a beer sommelier and enjoy some of the finest Czech beers in a great company.
             </Typography>
             <div className="group mt-8 flex justify-around items-center gap-3">
               <Tooltip content="$59 per person">
@@ -82,14 +79,26 @@ import TourDetail from "./TourDetail";
               </Tooltip>
             </div>
           </CardBody>
-          <CardFooter className="pt-3">
-            <Button size="lg" fullWidth={true}>
-              More details
+          <CardFooter className="flex flex-wrap justify-around pt-3">
+            <Button size="lg" className="flex justify-center items-center gap-1"
+              onClick={() => setOpenDetails(!openDetails)}
+              > 
+              {!openDetails ?
+              <><ArrowUturnDownIcon className="h-4 w-4"/>Show details</>
+              :
+              <><ArrowUturnUpIcon className="h-4 w-4"/>Hide details</>
+              }
+
+            </Button >
+            <Button size="lg" className={`flex justify-center items-center gap-4 ${openDetails ? "bg-red-700" : ''} `}>
+              Book now <ForwardIcon className="h-4 w-4"/>
             </Button>
           </CardFooter>
         </Card>
-        
+        {openDetails ?
         <TourDetail />
-      </>
+        :
+        ""}
+      </div>
     );
   }
