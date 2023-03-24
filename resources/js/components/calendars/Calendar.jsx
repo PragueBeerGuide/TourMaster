@@ -21,10 +21,15 @@ export function Booking() {
     const [openDetails, setOpenDetails] = useState(false);
 
     const changeDate = (e) => {
+<<<<<<<<< Temporary merge branch 1
+        setDateState(e);
+        setOpenDetails(e);
+    };
+=========
         setDateState(e)
       }
 return (
-    <div className="w-full max-w-[30rem] shadow-lg">
+    <div className="w-full max-w-[30rem] shadow-lg flex flex-col items-center py-12">
         <Calendar
             value = {dateState} 
             onChange = {changeDate}  
@@ -32,7 +37,25 @@ return (
             minDetail = 'month'
         />
           
-        <p>You've selected <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
+        <p className="my-4">You've selected <b>{moment(dateState).format('MMMM Do YYYY')}</b></p>
+>>>>>>>>> Temporary merge branch 2
+
+    return (
+        <div className="w-full max-w-[30rem] shadow-lg">
+            <Calendar
+                value={dateState}
+                onChange={changeDate}
+                minDate={new Date()}
+                minDetail="month"
+            />
+
+            <p>
+                You've selected{" "}
+                <b>{moment(dateState).format("MMMM Do YYYY")}</b>
+            </p>
+
+            {openDetails ? <ListOfEvents /> : null}
+            <Form/>
 
         </div>
     );
