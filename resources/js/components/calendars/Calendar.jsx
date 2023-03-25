@@ -14,7 +14,7 @@ import {
     Button,
     Tooltip,
 } from "@material-tailwind/react";
-import Form from "../Form/UseMultistepForm";
+import Form from "../form/UseMultistepForm";
 
 export function Booking() {
     const [dateState, setDateState] = useState(new Date());
