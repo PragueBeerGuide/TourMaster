@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->date('day');
-            $table->integer('hour');
+            $table->time('hour');
+            $table->time('duration')->nullable();
             $table->integer('price');
             $table->integer('capacity');
             $table->integer('tour_id');

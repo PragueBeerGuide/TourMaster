@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->integer('customer_id');
             $table->integer('event_id');
-            $table->integer('customization');
+            $table->boolean('extra_hotel_pick_up')->default(false);
+            $table->boolean('extra_drink_package')->default(false);
             $table->integer('merchandise_id');
             $table->timestamps();
         });
