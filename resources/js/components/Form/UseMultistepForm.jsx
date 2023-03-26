@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import SignUpInfo from "./SignUpInfo";
 import PersonalInfo from "./PersonalInfo";
+import Confirmation from "./Confirmation";
+
 
 import {
     Card,
@@ -9,6 +11,7 @@ import {
     Button,
     Typography,
   } from "@material-tailwind/react";
+import { number } from "prop-types";
    
   export default function Form() {
     const [page, setPage] = useState(0);
@@ -19,23 +22,21 @@ import {
       lastName: "",
       username: "",
       nationality: "",
-      other: "",
+      negcount:"-",
+      pluscount:"+",
     });
   
-    const FormTitles = ["Sign Up", "Personal Info", "Other"];
+    const FormTitles = ["Sign Up", "Personal Info", "Confirmation"];
     const PageDisplay = () => {
     if (page === 0) {
         return <PersonalInfo formData={formData} setFormData={setFormData} />;
       } else if (page === 1) {
         return <SignUpInfo formData={formData} setFormData={setFormData} />;
+      } else {
+        return <Confirmation formData={formData} setFormData={setFormData} />
       };
     }
   
-  
-  
-
-
-
   return (
     <div className="form">
       <div className="form-container">

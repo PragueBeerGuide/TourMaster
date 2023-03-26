@@ -19,8 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/beer-tours', [index::class, 'front']);
-
 Route::get('/home', [HomeController::class, 'home'])->middleware('auth')->name('home');
 
 Route::get('/show-admin/{id}', [AdminController::class, 'show'])->name('show-admin');
