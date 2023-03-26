@@ -13,6 +13,7 @@ export default function ListOfEvents() {
         setDisplayForm(true);
       };
     return (
+        <>
         <button className="border-2 w-full hover:bg-orange-100">
            <div className="flex px-5 py-3">
              <div className="flex flex-col items-start w-3/4 ">
@@ -33,8 +34,9 @@ export default function ListOfEvents() {
                     
                 </div>
              </Tooltip>
-             {displayForm && <Form />}
            </div>
         </button>
+         {displayForm && <Form />}
+         </>
     )
 }
