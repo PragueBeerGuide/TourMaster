@@ -32,7 +32,7 @@ import { number } from "prop-types";
         return <PersonalInfo formData={formData} setFormData={setFormData} />;
       } else if (page === 1) {
         return <SignUpInfo formData={formData} setFormData={setFormData} />;
-      } else {
+      } else if (page === 2) {
         return <Confirmation formData={formData} setFormData={setFormData} />
       };
     }

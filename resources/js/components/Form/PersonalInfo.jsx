@@ -22,6 +22,7 @@ export default function PersonalInfo({ formData, setFormData }) {
                             setCount={() => setCount(count + 1)}
                             value={formData.pluscount}
                         />
+                         
                     </div>
                 </div>
             </Card>

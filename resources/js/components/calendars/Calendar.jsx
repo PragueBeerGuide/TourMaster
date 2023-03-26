@@ -19,11 +19,13 @@ import Form from "../Form/UseMultistepForm";
 export function Booking() {
     const [dateState, setDateState] = useState(new Date());
     const [openDetails, setOpenDetails] = useState(false);
+    const [info, setInfo]=useState(false)
 
     const changeDate = (e) => {
         setDateState(e);
-        setOpenDetails(e);
+        setOpenDetails(true);
     };
+
 
 return (
     <div className="w-full max-w-[30rem] shadow-lg flex flex-col items-center py-12">
@@ -40,8 +42,9 @@ return (
                 <b>{moment(dateState).format("MMMM Do YYYY")}</b>
             </p>
 
-            {openDetails ? <ListOfEvents /> : null}
-            <Form/>
+            {openDetails ? <><ListOfEvents /> <Form/></> : null}
+
+        
 
         </div>
     );
