@@ -1,24 +1,19 @@
-import StickyNavbar from "../components/navbar/StickyNavbar";
-import TourSummary from "../components/tour/TourSummary";
-import Footer from "../components/footer/Footer";
-import { Booking } from "../components/calendars/Calendar";
-import Testimonial from "../components/testimonial/Testimonial";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { Dashboard, Auth } from "../layouts";
+import Home from "../pages/home/Home";
+import Tours from "../pages/tours/Tours";
 
 function App() {
 
   return (
-    <>
-      <StickyNavbar />
-      
-      <div className="flex flex-col-reverse md:flex-row">
-        <Testimonial />
-        <Booking/>
-      </div>
-      
-      <TourSummary />
-
-      <Footer />
-    </>
+    
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/tours" element={<Tours />} />
+      <Route path="/dashboard/*" element={<Dashboard />} />
+      <Route path="/auth/*" element={<Auth />} />
+      {/* <Route path="*" element={<Navigate to="/dashboard/home" replace />} /> */}
+    </Routes>
   )
 }
 

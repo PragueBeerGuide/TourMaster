@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customers', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('phone');
-            $table->string('email');
-            $table->timestamps();
+        Schema::table('tours', function (Blueprint $table) {
+            $table->boolean('private')->after('name')->comment('true for private tours, false for join-in tours')->default(false);
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('customers');
+        Schema::table('tours', function (Blueprint $table) {
+            //
+        });
     }
 };
