@@ -14,8 +14,7 @@ import {
     const [page, setPage] = useState(0);
     const [formData, setFormData] = useState({
       email: "",
-      password: "",
-      confirmPassword: "",
+      telephone: "",
       firstName: "",
       lastName: "",
       username: "",

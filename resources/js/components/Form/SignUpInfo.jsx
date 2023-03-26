@@ -14,6 +14,26 @@ export default function SignUpInfo({ formData, setFormData }) {
     <div className="mb-4 flex flex-col gap-6">
       <Input
         type="text"
+        placeholder="First Name"
+        value={formData.username}
+        onChange={(event) =>
+          setFormData({ ...formData, username: event.target.value })
+        }
+      />
+      </div>
+      <div className="mb-4 flex flex-col gap-6">
+      <Input
+        type="text"
+        placeholder="Last Name"
+        value={formData.lastname}
+        onChange={(event) =>
+          setFormData({ ...formData, lastname: event.target.value })
+        }
+      />
+      </div>
+    <div className="mb-4 flex flex-col gap-6">
+      <Input
+        type="text"
         placeholder="Email..."
         value={formData.email}
         onChange={(event) =>
@@ -24,20 +44,10 @@ export default function SignUpInfo({ formData, setFormData }) {
       <div className="mb-4 flex flex-col gap-6">
       <Input
         type="text"
-        placeholder="Password..."
-        value={formData.password}
+        placeholder="Phone Number"
+        value={formData.telephone}
         onChange={(event) =>
-          setFormData({ ...formData, password: event.target.value })
-        }
-      />
-      </div>
-      <div className="mb-4 flex flex-col gap-6">
-      <Input
-        type="text"
-        placeholder="Confirm Password..."
-        value={formData.confirmPassword}
-        onChange={(event) =>
-          setFormData({ ...formData, confirmPassword: event.target.value })
+          setFormData({ ...formData, telephone: event.target.value })
         }
       />
       </div>
