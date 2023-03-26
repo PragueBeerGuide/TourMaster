@@ -1,11 +1,17 @@
 import { Tooltip } from "@material-tailwind/react";
+import { useState } from "react";
 
 import {
     ChevronRightIcon,
 } from "@heroicons/react/24/outline";
+import Form from "../Form/UseMultistepForm";
 
 export default function ListOfEvents() {
 
+    const [displayForm, setDisplayForm] = useState(false);
+    const handleClick = () => {
+        setDisplayForm(true);
+      };
     return (
         <button className="border-2 w-full hover:bg-orange-100">
            <div className="flex px-5 py-3">
@@ -22,10 +28,12 @@ export default function ListOfEvents() {
                   }}
             >
                 <div className="flex font-bold items-center justify-around text-teal-800  w-1/4">
-                    <div>Available</div>
+                    <div onClick={handleClick}>Available</div>
                     <ChevronRightIcon strokeWidth={2} className="h-5 w-5" /> 
+                    
                 </div>
              </Tooltip>
+             {displayForm && <Form />}
            </div>
         </button>
     )

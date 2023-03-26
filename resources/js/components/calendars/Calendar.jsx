@@ -14,7 +14,7 @@ import {
     Button,
     Tooltip,
 } from "@material-tailwind/react";
-import Form from "../form/UseMultistepForm";
+import Form from "../Form/UseMultistepForm";
 
 export function Booking() {
     const [dateState, setDateState] = useState(new Date());
@@ -42,7 +42,7 @@ return (
                 <b>{moment(dateState).format("MMMM Do YYYY")}</b>
             </p>
 
-            {openDetails ? <><ListOfEvents /> <Form/></> : null}
+            {openDetails ? <><ListOfEvents /></> : null}
 
         
 
