@@ -24,6 +24,7 @@ import { number } from "prop-types";
       nationality: "",
       negcount:"-",
       pluscount:"+",
+      count:0
     });
   
     const FormTitles = ["Sign Up", "Personal Info", "Confirmation"];

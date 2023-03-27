@@ -1,9 +1,17 @@
 import { Card } from "@material-tailwind/react";
 import React, { useState } from "react";
 import Updater from "./Button";
+import Confirmation from "./Confirmation";
 
-export default function PersonalInfo({ formData, setFormData }) {
-    const [count, setCount] = React.useState(0);
+// export const personalInfo = {
+//     count: 0
+//   };
+  
+  export default function PersonalInfo({ formData, setFormData }) {
+    // const [count, setCount] = React.useState(0);
+    
+
+    // personalInfo.count = count;  
 
     return (
         <>
@@ -14,18 +22,23 @@ export default function PersonalInfo({ formData, setFormData }) {
                     <div>
                         Adults: 400 kč:&nbsp;&nbsp;
                         <Updater
-                            setCount={() => setCount(Math.max(count - 1, 0))}
+                            setCount={() => setFormData({...formData, count : Math.max(formData.count - 1, 0)})}
                             value={formData.negcount}
                         />
-                        &nbsp;&nbsp;{count}&nbsp;&nbsp;
+                        &nbsp;&nbsp;{formData.count}&nbsp;&nbsp;
                         <Updater
-                            setCount={() => setCount(count + 1)}
+                            setCount={() => setFormData({...formData, count : formData.count + 1})}
                             value={formData.pluscount}
                         />
                          
                     </div>
                 </div>
+                
             </Card>
         </>
     );
+   
 }
+
+
+
