@@ -4,6 +4,7 @@ import PersonalInfo from "./PersonalInfo";
 import Confirmation from "./Confirmation";
 
 
+
 import {
     Card,
     Input,
@@ -11,17 +12,17 @@ import {
     Button,
     Typography,
   } from "@material-tailwind/react";
-import { number } from "prop-types";
+
    
-  export default function Form() {
+  export default function Form({date}) {
     const [page, setPage] = useState(0);
     const [formData, setFormData] = useState({
+      date: date,
       email: "",
       telephone: "",
       firstName: "",
       lastName: "",
       username: "",
-      nationality: "",
       negcount:"-",
       pluscount:"+",
       count:0
@@ -57,7 +58,7 @@ import { number } from "prop-types";
           <Button
             onClick={() => {
               if (page === FormTitles.length - 1) {
-                alert("You're going on an adventure!");
+                alert("Jedeme na pivo!");
                 console.log(formData);
               } else {
                 setPage((currPage) => currPage + 1);
