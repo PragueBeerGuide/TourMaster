@@ -33,7 +33,7 @@ export default function Form({ date }) {
         return emailRegex.test(email);
       };
 
-    const FormTitles = ["Sign Up", "Personal Info", "Confirmation"];
+    const FormTitles = ["How many are joining?", "Who are you? (We promise not to tell anyone else)", "Is this right?"];
     const PageDisplay = () => {
         if (page === 0) {
             return (
@@ -54,6 +54,7 @@ export default function Form({ date }) {
                 <div className="header">
                     <h1>{FormTitles[page]}</h1>
                 </div>
+                {console.log(page)}
                 <div className="body">{PageDisplay()}</div>
                 <div className="footer">
                     <Button
@@ -80,8 +81,7 @@ export default function Form({ date }) {
                             ) {
                                 formIsValid = false;
                                 alert("Please fill in all required fields.");
-                            } else if(
-                                !isEmailValid(formData.email)){
+                            } else if( page === 1 && !isEmailValid(formData.email)){
                                     alert ("Please provide a valid email address");}
                             else {
                                 setPage((currPage) => currPage + 1);

@@ -14,7 +14,7 @@ import Confirmation from "./Confirmation";
                     <div className="mb-4 flex flex-col gap-6"></div>
 
                     <div>
-                        Adults: 400 kč:&nbsp;&nbsp;
+                        Adults 400 kč:&nbsp;&nbsp;
                         <Updater
                             setCount={() => setFormData({...formData, count : Math.max(formData.count - 1, 0)})}
                             value={formData.negcount}
