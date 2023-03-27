@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SignUpInfo from "./SignUpInfo";
 import PersonalInfo from "./PersonalInfo";
 import Confirmation from "./Confirmation";
-// import {dateState} from "../calendars/Calendar.jsx"
+
 
 
 import {
@@ -23,13 +23,9 @@ import {
       firstName: "",
       lastName: "",
       username: "",
-      nationality: "",
       negcount:"-",
       pluscount:"+",
-      count:0,
-    //   date: dateState
-
-
+      count:0
     });
   
     const FormTitles = ["Sign Up", "Personal Info", "Confirmation"];

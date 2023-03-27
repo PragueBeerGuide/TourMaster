@@ -3,8 +3,6 @@ import moment from "moment";
 import { useState } from "react";
 import Calendar from "react-calendar";
 
-
-// import { personalInfo } from "./PersonalInfo";
 import {
     Card,
     Input,
@@ -15,12 +13,8 @@ import {
 } from "@material-tailwind/react";
 
 export default function Confirmation({ formData, setFormData }) {
-    const date=Calendar
 
-    // console.log(formData);
-
-   
-    
+  
     return (
        
         <Card color="transparent" shadow={false}>

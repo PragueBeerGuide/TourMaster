@@ -6,10 +6,6 @@ import Confirmation from "./Confirmation";
 
   
   export default function PersonalInfo({ formData, setFormData }) {
-    // const [count, setCount] = React.useState(0);
-    
-
-    // personalInfo.count = count;  
 
     return (
         <>
