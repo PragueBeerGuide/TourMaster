@@ -6,7 +6,7 @@ import {
 } from "@heroicons/react/24/outline";
 import Form from "../Form/UseMultistepForm";
 
-export default function ListOfEvents() {
+export default function ListOfEvents({date}) {
 
     const [displayForm, setDisplayForm] = useState(false);
     const handleClick = () => {
@@ -36,7 +36,7 @@ export default function ListOfEvents() {
              </Tooltip>
            </div>
         </button>
-         {displayForm && <Form />}
+         {displayForm && <Form date={date} />}
          </>
     )
 }

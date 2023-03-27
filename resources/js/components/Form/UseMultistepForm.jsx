@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SignUpInfo from "./SignUpInfo";
 import PersonalInfo from "./PersonalInfo";
 import Confirmation from "./Confirmation";
+// import {dateState} from "../calendars/Calendar.jsx"
 
 
 import {
@@ -11,11 +12,12 @@ import {
     Button,
     Typography,
   } from "@material-tailwind/react";
-import { number } from "prop-types";
+
    
-  export default function Form() {
+  export default function Form({date}) {
     const [page, setPage] = useState(0);
     const [formData, setFormData] = useState({
+      date: date,
       email: "",
       telephone: "",
       firstName: "",
@@ -24,7 +26,10 @@ import { number } from "prop-types";
       nationality: "",
       negcount:"-",
       pluscount:"+",
-      count:0
+      count:0,
+    //   date: dateState
+
+
     });
   
     const FormTitles = ["Sign Up", "Personal Info", "Confirmation"];
@@ -57,7 +62,7 @@ import { number } from "prop-types";
           <Button
             onClick={() => {
               if (page === FormTitles.length - 1) {
-                alert("You're going on an adventure!");
+                alert("Jedeme na pivo!");
                 console.log(formData);
               } else {
                 setPage((currPage) => currPage + 1);

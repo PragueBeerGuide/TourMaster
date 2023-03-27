@@ -3,9 +3,7 @@ import React, { useState } from "react";
 import Updater from "./Button";
 import Confirmation from "./Confirmation";
 
-// export const personalInfo = {
-//     count: 0
-//   };
+
   
   export default function PersonalInfo({ formData, setFormData }) {
     // const [count, setCount] = React.useState(0);
