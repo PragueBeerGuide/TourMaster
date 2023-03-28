@@ -34,7 +34,7 @@ class GuideController extends Controller
             'last_name' => 'required|max:255',
         ]);
         $guide = Guide::create($storeData);
-        return redirect('/guides')->with('completed', 'Guide has been saved');
+        return redirect('/guides')->with('success', 'New guide has been saved');
     }
 
     /**
@@ -64,7 +64,7 @@ class GuideController extends Controller
             'last_name' => 'required|max:255',
         ]);
         Guide::whereId($id)->update($updateData);
-        return redirect('/guides')->with('completed', 'Guide has been updated');
+        return redirect('/guides')->with('success', 'Guide has been updated');
     }
 
     /**
@@ -74,7 +74,7 @@ class GuideController extends Controller
     {
         $guide = Guide::findOrFail($id);
         $guide -> delete();
-        return redirect('/guides')->with('completed', 'Guide has been deleted');
+        return redirect('/guides')->with('danger', 'Guide has been deleted');
 
     }
 }

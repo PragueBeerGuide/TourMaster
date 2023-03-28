@@ -16,16 +16,13 @@
 
 </head>
 <body>
-
+    
     <div class="main-content">
-        @if($errors->all())
-            @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach 
-        @endif
+     
+    @include('common.allerts')
 
-        @yield('content')
-
+    @yield('content')
+    
     </div>
 
 </body>
