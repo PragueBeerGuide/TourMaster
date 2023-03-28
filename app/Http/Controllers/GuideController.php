@@ -12,7 +12,7 @@ class GuideController extends Controller
     public function index()
     {
         $guide = Guide::all();
-        return view('admin.index', compact('guide'));
+        return view('admin.guides_index', compact('guide'));
 
     }
 
@@ -21,7 +21,7 @@ class GuideController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+        return view('admin.guides_create');
     }
 
     /**
@@ -51,7 +51,7 @@ class GuideController extends Controller
     public function edit(string $id)
     {
         $guide = Guide::findOrFail($id);
-        return view('admin.edit', compact('guide'));
+        return view('admin.guides_edit', compact('guide'));
     }
 
     /**
@@ -63,7 +63,7 @@ class GuideController extends Controller
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
         ]);
-        Guide::whereId($id)->update('updateData');
+        Guide::whereId($id)->update($updateData);
         return redirect('/guides')->with('completed', 'Guide has been updated');
     }
 
