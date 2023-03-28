@@ -1,7 +1,7 @@
 @if($errors->all())
-            @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach 
+    @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+    @endforeach 
 @endif
 
 @if (session('success'))

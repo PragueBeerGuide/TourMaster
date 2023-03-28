@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Guide;
+use SweetAlert;
 
 class GuideController extends Controller
 {
@@ -75,6 +76,5 @@ class GuideController extends Controller
         $guide = Guide::findOrFail($id);
         $guide -> delete();
         return redirect('/guides')->with('danger', 'Guide has been deleted');
-
     }
 }

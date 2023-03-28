@@ -2,17 +2,11 @@
 
 @section('content')
 
-  <style>
-    .push-top {
-      margin-top: 50px;
-    }
-  </style>
-
-  <div class="push-top">
+  <div>
     @if(session()->get('success'))
       <div class="alert alert-success">
         {{ session()->get('success') }}  
-      </div><br />
+      </div>
     @endif
 
     <table class="table">
@@ -35,7 +29,13 @@
                   <form action="{{ route('guides.destroy', $guides->id)}}" method="post" style="display: inline-block">
                       @csrf
                       @method('DELETE')
-                      <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                      <button 
+                        class="btn btn-danger btn-sm" 
+                        type="submit" 
+                        onclick="return confirm('{{ __('Are you sure you want to delete?') }}')"
+                      >
+                      Delete
+                      </button>
                     </form>
               </td>
           </tr>
