@@ -17,11 +17,6 @@ import {
 export default function SignUpInfo({ formData, setFormData }) {
     const [value, setValue] = useState()
 
- 
-   
-
-
-
   return (
     <Card color="transparent" shadow={false}>
     <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
@@ -62,10 +57,9 @@ export default function SignUpInfo({ formData, setFormData }) {
         }
       />
       </div>
-      <div className="mb-4 flex flex-col gap-6">
-     
-        
+      <div className="mb-4 flex flex-col gap-6"> 
       <Input
+      
         type="text"
         required
         placeholder="Phone Number"
