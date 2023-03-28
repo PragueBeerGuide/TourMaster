@@ -12,6 +12,15 @@ class Event extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'start',
+        'end',
+        'price',
+        'capacity',
+        'tour_id'
+    ];
+
     public function guides()
     {
         return $this->belongsToMany(Guide::class, 'guide_event');

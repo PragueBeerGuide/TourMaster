@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 const withMT = require("@material-tailwind/react/utils/withMT");
- 
+
 module.exports = withMT({
-  content: [ 
+  content: [
     "./resources/**/*.{blade.php, js, jsx}",
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
