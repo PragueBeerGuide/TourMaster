@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import SignUpInfo from "./SignUpInfo";
 import PersonalInfo from "./PersonalInfo";
 import Confirmation from "./Confirmation";
+import axios from "axios";
+import moment from "moment";
 
 import {
     Card,
@@ -25,14 +27,29 @@ export default function Form({ date }) {
         negcount: "-",
         pluscount: "+",
         count: 0,
-        time: "6pm"
-          
+        time: "6pm",
     });
-    console.log(formData.date)
+
     const isEmailValid = (email) => {
         // Use a regular expression to check if the email is in a valid format
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
+    };
+
+    const postDate = async () => {
+        const response = await axios.post("/home/action", {
+            title: `${formData.firstName} ${formData.lastName}`,
+            start: `${
+                moment(date).format("Y-MM-DD HH:mm:ss").split(" ")[0]
+            } 18:00:00`,
+            end: `${
+                moment(date).format("Y-MM-DD HH:mm:ss").split(" ")[0]
+            } 18:00:00`,
+            type: "add",
+        });
+        if (response.status === 200) {
+            alert("jdeme na pívo!!!");
+        }
     };
 
     const FormTitles = [
@@ -60,7 +77,7 @@ export default function Form({ date }) {
                 <div className="header">
                     <h1>{FormTitles[page]}</h1>
                 </div>
-                {console.log(page)}
+
                 <div className="body">{PageDisplay()}</div>
                 <div className="footer">
                     <Button
@@ -74,22 +91,7 @@ export default function Form({ date }) {
                     <Button
                         onClick={() => {
                             if (page === FormTitles.length - 1) {
-                                alert("Jedeme na pivo!");
-                                console.log(formData);
-
-                                $.ajax({
-                                    url: "/home/action",
-                                    type: "POST",
-                                    data: {
-                                        title: title,
-                                        formData: start,
-                                        formData: end,
-                                        type: "add",
-                                    },
-                                    success: function () {
-                                        alert("Jedeme na pivo!");
-                                    },
-                                });
+                                postDate();
                             } else if (
                                 page === 1 &&
                                 (!formData.firstName ||

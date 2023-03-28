@@ -34,38 +34,36 @@ class HomeController extends Controller
 
     public function action(Request $request)
     {
-        if ($request->ajax()) {
-            if ($request->type == 'add') {
-                $event = Event::create([
-                    'title'     => $request->title,
-                    'start'     => $request->start,
-                    'end'       => $request->end,
-                    'price'     => $request->price,
-                    'capacity'  => $request->capacity,
-                    'tour_id'   => $request->tour_id
-                ]);
+        if ($request->type == 'add') {
+            $event = Event::create([
+                'title'     => $request->title,
+                'start'     => $request->start,
+                'end'       => $request->end,
+                'price'     => $request->price,
+                'capacity'  => $request->capacity,
+                'tour_id'   => $request->tour_id
+            ]);
 
-                return response()->json($event);
-            }
+            return response()->json($event);
+        }
 
-            if ($request->type == 'update') {
-                $event = Event::find($request->id)->update([
-                    'title'     => $request->title,
-                    'start'     => $request->start,
-                    'end'       => $request->end,
-                    'price'     => $request->price,
-                    'capacity'  => $request->capacity,
-                    'tour_id'   => $request->tour_id
-                ]);
+        if ($request->type == 'update') {
+            $event = Event::find($request->id)->update([
+                'title'     => $request->title,
+                'start'     => $request->start,
+                'end'       => $request->end,
+                'price'     => $request->price,
+                'capacity'  => $request->capacity,
+                'tour_id'   => $request->tour_id
+            ]);
 
-                return response()->json($event);
-            }
+            return response()->json($event);
+        }
 
-            if ($request->type == 'delete') {
-                $event = Event::find($request->id)->delete();
+        if ($request->type == 'delete') {
+            $event = Event::find($request->id)->delete();
 
-                return response()->json($event);
-            }
+            return response()->json($event);
         }
     }
 }
