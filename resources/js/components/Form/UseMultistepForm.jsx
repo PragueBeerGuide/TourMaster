@@ -52,6 +52,19 @@ export default function Form({ date }) {
         }
     };
 
+    const postCustomerInfo = async () => {
+        const response = await axios.post("/customer/action", {
+                name: `${formData.firstName} ${formData.lastName}`,
+                email: `${formData.email}`,
+                phone: `${formData.telephone}`,
+                type: "add"
+        });
+        if (response.status === 200) {
+            console.log('success')
+        }
+    }
+
+
     const FormTitles = [
         "How many are joining?",
         "Who are you? (We promise not to tell anyone else)",
@@ -92,6 +105,7 @@ export default function Form({ date }) {
                         onClick={() => {
                             if (page === FormTitles.length - 1) {
                                 postDate();
+                                postCustomerInfo();
                             } else if (
                                 page === 1 &&
                                 (!formData.firstName ||

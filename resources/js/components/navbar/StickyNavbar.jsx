@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import TourDetail from '../tour/TourDetail';
 import {
   Navbar,
   MobileNav,
@@ -7,9 +8,14 @@ import {
   IconButton,
   Card,
 } from "@material-tailwind/react";
+import {
+  ArrowUturnDownIcon,
+  ArrowUturnUpIcon 
+} from "@heroicons/react/24/solid";
  
 export default function StickyNavbar() {
   const [openNav, setOpenNav] = useState(false);
+  const [openDetails, setOpenDetails] = useState(false);
  
   useEffect(() => {
     window.addEventListener(
@@ -151,20 +157,22 @@ export default function StickyNavbar() {
           Prague Beer Tours
         </Typography>
         <Typography color="gray" className="font-normal">
-          Can you help me out? you will get a lot of free exposure doing this
-          can my website be in english?. There is too much white space do less
-          with more, so that will be a conversation piece can you rework to make
-          the pizza look more delicious other agencies charge much lesser can
-          you make the blue bluer?. I think we need to start from scratch can my
-          website be in english?, yet make it sexy i&apos;ll pay you in a week
-          we don&apos;t need to pay upfront i hope you understand can you make
-          it stand out more?. Make the font bigger can you help me out? you will
-          get a lot of free exposure doing this that&apos;s going to be a chunk
-          of change other agencies charge much lesser. Are you busy this
-          weekend? I have a new project with a tight deadline that&apos;s going
-          to be a chunk of change. There are more projects lined up charge extra
-          the next time.
+        Discover the best hidden local pubs carefully selected by a beer sommelier and enjoy some of the finest Czech beers in great company.
         </Typography>
+        <Button size="lg" className="flex justify-center items-center gap-1"
+              onClick={() => setOpenDetails(!openDetails)}
+              > 
+              {!openDetails ?
+              <><ArrowUturnDownIcon className="h-4 w-4"/>Show details</>
+              :
+              <><ArrowUturnUpIcon className="h-4 w-4"/>Hide details</>
+              }
+
+            </Button >
+            {openDetails ?
+        <TourDetail />
+        :
+        ""}
       </div>
     </>
   );
