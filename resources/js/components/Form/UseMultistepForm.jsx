@@ -22,11 +22,13 @@ export default function Form({ date }) {
         telephone: "",
         firstName: "",
         lastName: "",
-        username: "",
         negcount: "-",
         pluscount: "+",
         count: 0,
+        time: "6pm"
+          
     });
+    console.log(formData.date)
     const isEmailValid = (email) => {
         // Use a regular expression to check if the email is in a valid format
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -90,7 +92,7 @@ export default function Form({ date }) {
                                 });
                             } else if (
                                 page === 1 &&
-                                (!formData.username ||
+                                (!formData.firstName ||
                                     !formData.lastName ||
                                     !formData.email ||
                                     !formData.telephone)
