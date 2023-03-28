@@ -21,6 +21,7 @@ export function Booking() {
     const [openDetails, setOpenDetails] = useState(false);
 
     const changeDate = (date) => {
+        
         setDateState(date);
         setOpenDetails(true);
     };
@@ -34,7 +35,6 @@ return (
                 minDate={new Date()}
                 minDetail="month"
             />
-
 
             <p>
                 You've selected{" "}
