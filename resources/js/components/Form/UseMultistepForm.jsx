@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import SignUpInfo from "./SignUpInfo";
 import PersonalInfo from "./PersonalInfo";
 import Confirmation from "./Confirmation";
+import axios from "axios";
+import moment from "moment";
 
 import {
     Card,
@@ -22,21 +24,39 @@ export default function Form({ date }) {
         telephone: "",
         firstName: "",
         lastName: "",
-        username: "",
         negcount: "-",
         pluscount: "+",
         count: 0,
-        time: "6pm"
-          
+        time: "6pm",
     });
-    console.log(formData.date)
+
     const isEmailValid = (email) => {
         // Use a regular expression to check if the email is in a valid format
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
-      };
+    };
 
-    const FormTitles = ["How many are joining?", "Who are you? (We promise not to tell anyone else)", "Is this right?"];
+    const postDate = async () => {
+        const response = await axios.post("/home/action", {
+            title: `${formData.firstName} ${formData.lastName}`,
+            start: `${
+                moment(date).format("Y-MM-DD HH:mm:ss").split(" ")[0]
+            } 18:00:00`,
+            end: `${
+                moment(date).format("Y-MM-DD HH:mm:ss").split(" ")[0]
+            } 18:00:00`,
+            type: "add",
+        });
+        if (response.status === 200) {
+            alert("jdeme na pívo!!!");
+        }
+    };
+
+    const FormTitles = [
+        "How many are joining?",
+        "Who are you? (We promise not to tell anyone else)",
+        "Is this right?",
+    ];
     const PageDisplay = () => {
         if (page === 0) {
             return (
@@ -57,7 +77,7 @@ export default function Form({ date }) {
                 <div className="header">
                     <h1>{FormTitles[page]}</h1>
                 </div>
-                {console.log(page)}
+
                 <div className="body">{PageDisplay()}</div>
                 <div className="footer">
                     <Button
@@ -71,22 +91,22 @@ export default function Form({ date }) {
                     <Button
                         onClick={() => {
                             if (page === FormTitles.length - 1) {
-                                alert("Jedeme na pivo!");
-                                console.log(formData);
-                             } 
-                            else if (
+                                postDate();
+                            } else if (
                                 page === 1 &&
-                                (!formData.username ||
+                                (!formData.firstName ||
                                     !formData.lastName ||
                                     !formData.email ||
-                                    !formData.telephone 
-                                    )
+                                    !formData.telephone)
                             ) {
                                 formIsValid = false;
                                 alert("Please fill in all required fields.");
-                            } else if( page === 1 && !isEmailValid(formData.email)){
-                                    alert ("Please provide a valid email address");}
-                            else {
+                            } else if (
+                                page === 1 &&
+                                !isEmailValid(formData.email)
+                            ) {
+                                alert("Please provide a valid email address");
+                            } else {
                                 setPage((currPage) => currPage + 1);
                             }
                         }}
