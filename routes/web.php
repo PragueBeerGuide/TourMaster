@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\GuideController;
-use App\Http\Controllers\index;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,7 +31,9 @@ Route::get('/dashboard', function () {
 
 Route::get('/home', [HomeController::class, 'home'])->middleware('auth')->name('home');
 
-Route::post('/home/action', [HomeController::class, 'action'])->name('action');
+Route::get('/events', [EventController::class, 'events'])->name('events');
+
+Route::post('/events/action', [EventController::class, 'action'])->name('action');
 
 Route::post('/customer/action', [CustomerController::class, 'action'])->name('customer-action');
 
