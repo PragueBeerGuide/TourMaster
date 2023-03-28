@@ -31,9 +31,13 @@ export default function Form({ date }) {
         // Use a regular expression to check if the email is in a valid format
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
-      };
+    };
 
-    const FormTitles = ["How many are joining?", "Who are you? (We promise not to tell anyone else)", "Is this right?"];
+    const FormTitles = [
+        "How many are joining?",
+        "Who are you? (We promise not to tell anyone else)",
+        "Is this right?",
+    ];
     const PageDisplay = () => {
         if (page === 0) {
             return (
@@ -70,20 +74,35 @@ export default function Form({ date }) {
                             if (page === FormTitles.length - 1) {
                                 alert("Jedeme na pivo!");
                                 console.log(formData);
-                             } 
-                            else if (
+
+                                $.ajax({
+                                    url: "/home/action",
+                                    type: "POST",
+                                    data: {
+                                        title: title,
+                                        formData: start,
+                                        formData: end,
+                                        type: "add",
+                                    },
+                                    success: function () {
+                                        alert("Jedeme na pivo!");
+                                    },
+                                });
+                            } else if (
                                 page === 1 &&
                                 (!formData.username ||
                                     !formData.lastName ||
                                     !formData.email ||
-                                    !formData.telephone 
-                                    )
+                                    !formData.telephone)
                             ) {
                                 formIsValid = false;
                                 alert("Please fill in all required fields.");
-                            } else if( page === 1 && !isEmailValid(formData.email)){
-                                    alert ("Please provide a valid email address");}
-                            else {
+                            } else if (
+                                page === 1 &&
+                                !isEmailValid(formData.email)
+                            ) {
+                                alert("Please provide a valid email address");
+                            } else {
                                 setPage((currPage) => currPage + 1);
                             }
                         }}
