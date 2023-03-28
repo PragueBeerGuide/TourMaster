@@ -18,11 +18,6 @@ import PhoneNumberInput from "./PhoneNumberInput";
 export default function SignUpInfo({ formData, setFormData }) {
     const [value, setValue] = useState()
 
- 
-   
-
-
-
   return (
     <Card color="transparent" shadow={false}>
       <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
@@ -33,9 +28,9 @@ export default function SignUpInfo({ formData, setFormData }) {
           type="text"
           required
           placeholder="First Name"
-          value={formData.username}
+          value={formData.firstName}
           onChange={(event) =>
-            setFormData({ ...formData, username: event.target.value })
+            setFormData({ ...formData, firstName: event.target.value })
           }
         />
         </div>

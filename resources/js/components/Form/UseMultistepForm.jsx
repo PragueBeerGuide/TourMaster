@@ -22,7 +22,6 @@ export default function Form({ date }) {
         telephone: "",
         firstName: "",
         lastName: "",
-        username: "",
         negcount: "-",
         pluscount: "+",
         count: 0,
@@ -76,7 +75,7 @@ export default function Form({ date }) {
                              } 
                             else if (
                                 page === 1 &&
-                                (!formData.username ||
+                                (!formData.firstName ||
                                     !formData.lastName ||
                                     !formData.email ||
                                     !formData.telephone 
