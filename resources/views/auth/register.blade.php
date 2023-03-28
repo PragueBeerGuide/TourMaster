@@ -24,6 +24,10 @@
     <input type="password" name="password_confirmation" value=""><br>
     <br>
 
+    perm<br>
+    <input type="permission_id" name="permission_id" value=""><br>
+    <br>
+
     <button>Register</button>
 
 </form>

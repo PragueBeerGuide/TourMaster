@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->id();
-            $table->date('day');
-            $table->time('hour');
-            $table->time('duration')->nullable();
-            $table->integer('price');
-            $table->integer('capacity');
-            $table->integer('tour_id');
+            $table->string('title');
+            $table->dateTime('start');
+            $table->dateTime('end');
+            $table->integer('price')->nullable();
+            $table->integer('capacity')->nullable();
+            $table->integer('tour_id')->nullable();
             $table->timestamps();
         });
     }
