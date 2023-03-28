@@ -9,7 +9,7 @@ function App() {
     
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/tours" element={<Tours />} />
+      <Route path="/beer-tours" element={<Tours />} />
       <Route path="/dashboard/*" element={<Dashboard />} />
       <Route path="/auth/*" element={<Auth />} />
       {/* <Route path="*" element={<Navigate to="/dashboard/home" replace />} /> */}

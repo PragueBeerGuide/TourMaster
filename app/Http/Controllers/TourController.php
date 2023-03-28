@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tour;
 use Illuminate\Http\Request;
 
 class TourController extends Controller
@@ -11,7 +12,9 @@ class TourController extends Controller
      */
     public function index()
     {
-        //
+        $tour = Tour::all();
+        return view('admin.tours_index', compact('tour'));
+
     }
 
     /**
@@ -19,7 +22,7 @@ class TourController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tours_create');
     }
 
     /**
@@ -27,7 +30,12 @@ class TourController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $storeData = $request->validate([
+            'name' => 'required|max:255',
+            'private' => 'boolean',
+        ]);
+        $tour = Tour::create($storeData);
+        return redirect('/tours')->with('success', 'New tour has been saved');
     }
 
     /**
@@ -43,7 +51,8 @@ class TourController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $tour = Tour::findOrFail($id);
+        return view('admin.tours_edit', compact('tour'));
     }
 
     /**
@@ -51,7 +60,12 @@ class TourController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $updateData = $request->validate([
+            'name' => 'required|max:255',
+            
+        ]);
+        Tour::whereId($id)->update($updateData);
+        return redirect('/tours')->with('success', 'Tour has been updated');
     }
 
     /**
@@ -59,6 +73,8 @@ class TourController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $tour = Tour::findOrFail($id);
+        $tour -> delete();
+        return redirect('/tours')->with('danger', 'Tour has been deleted');
     }
 }

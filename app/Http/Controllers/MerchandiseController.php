@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Merchandise;
 
 class MerchandiseController extends Controller
 {
@@ -11,7 +12,9 @@ class MerchandiseController extends Controller
      */
     public function index()
     {
-        //
+        $merchandise = Merchandise::all();
+        return view('admin.merchandises_index', compact('merchandise'));
+
     }
 
     /**
@@ -19,7 +22,7 @@ class MerchandiseController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.merchandises_create');
     }
 
     /**
@@ -27,7 +30,11 @@ class MerchandiseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $storeData = $request->validate([
+            'name' => 'required|max:255',
+        ]);
+        $merchandise = Merchandise::create($storeData);
+        return redirect('/merchandises')->with('success', 'New merchandise has been saved');
     }
 
     /**
@@ -43,7 +50,8 @@ class MerchandiseController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $merchandise = Merchandise::findOrFail($id);
+        return view('admin.merchandises_edit', compact('merchandise'));
     }
 
     /**
@@ -51,7 +59,11 @@ class MerchandiseController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $updateData = $request->validate([
+            'name' => 'required|max:255',
+        ]);
+        Merchandise::whereId($id)->update($updateData);
+        return redirect('/merchandises')->with('success', 'Merchandise has been updated');
     }
 
     /**
@@ -59,6 +71,9 @@ class MerchandiseController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $merchandise = Merchandise::findOrFail($id);
+        $merchandise -> delete();
+        return redirect('/merchandises')->with('danger', 'Merchandise has been deleted');
     }
 }
+
