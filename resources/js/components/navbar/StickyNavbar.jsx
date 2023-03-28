@@ -148,7 +148,7 @@ export default function StickyNavbar() {
           />
         </Card>
         <Typography variant="h2" color="blue-gray" className="mb-2">
-          What is Material Tailwind
+          Prague Beer Tours
         </Typography>
         <Typography color="gray" className="font-normal">
           Can you help me out? you will get a lot of free exposure doing this
