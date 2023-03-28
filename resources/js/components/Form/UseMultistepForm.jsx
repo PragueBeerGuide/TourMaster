@@ -26,7 +26,10 @@ export default function Form({ date }) {
         negcount: "-",
         pluscount: "+",
         count: 0,
+        time: "6pm"
+          
     });
+    console.log(formData.date)
     const isEmailValid = (email) => {
         // Use a regular expression to check if the email is in a valid format
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

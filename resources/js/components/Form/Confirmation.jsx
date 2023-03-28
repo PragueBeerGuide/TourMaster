@@ -23,7 +23,7 @@ export default function Confirmation({ formData, setFormData }) {
                    
                        <strong>
                            You've selected {formData.count} adults for {formData.count*400}Kč
-                           on {moment(formData.date).format("MMMM Do YYYY")}.
+                           on {moment(formData.date).format("MMMM Do YYYY")} at 6pm.
                        </strong>
                 
                </div>
