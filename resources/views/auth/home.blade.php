@@ -71,7 +71,7 @@
                 center:'title',
                 right:'month,agendaWeek,agendaDay'
             },
-            events:'/home',
+            events:'/events',
             selectable:true,
             selectHelper: true,
             select:function(start, end, allDay)
@@ -85,7 +85,7 @@
                     var end = $.fullCalendar.formatDate(end, 'Y-MM-DD HH:mm:ss');
     
                     $.ajax({
-                        url:"/home/action",
+                        url:"/events/action",
                         type:"POST",
                         data:{
                             title: title,
@@ -109,7 +109,7 @@
                 var title = event.title;
                 var id = event.id;
                 $.ajax({
-                    url:"/home/action",
+                    url:"/events/action",
                     type:"POST",
                     data:{
                         title: title,
@@ -132,7 +132,7 @@
                 var title = event.title;
                 var id = event.id;
                 $.ajax({
-                    url:"/home/action",
+                    url:"/events/action",
                     type:"POST",
                     data:{
                         title: title,
@@ -155,7 +155,7 @@
                 {
                     var id = event.id;
                     $.ajax({
-                        url:"/home/action",
+                        url:"/events/action",
                         type:"POST",
                         data:{
                             id:id,
