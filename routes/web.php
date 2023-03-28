@@ -31,6 +31,8 @@ Route::get('/beer-tours', [index::class, 'front']);
 
 Route::get('/home', [HomeController::class, 'home'])->middleware('auth')->name('home');
 
+Route::post('/home/action', [HomeController::class, 'action'])->middleware('auth')->name('action');
+
 Route::get('/show-admin/{id}', [AdminController::class, 'show'])->name('show-admin');
 
 Route::post('/store-admin/edit/{id}', [AdminController::class, 'store'])->name('store-admin');
