@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\GuideController;
 use App\Http\Controllers\index;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -39,3 +40,5 @@ Route::post('/customer/action', [CustomerController::class, 'action'])->name('cu
 Route::get('/show-admin/{id}', [AdminController::class, 'show'])->name('show-admin');
 
 Route::post('/store-admin/edit/{id}', [AdminController::class, 'store'])->name('store-admin');
+
+Route::resource('guides', GuideController::class);
