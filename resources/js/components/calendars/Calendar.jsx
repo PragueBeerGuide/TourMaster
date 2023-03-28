@@ -12,7 +12,7 @@ import {
     CardFooter,
     Typography,
     Button,
-    Tooltip,
+    Tooltip
 } from "@material-tailwind/react";
 import Form from "../Form/UseMultistepForm";
 
@@ -21,6 +21,7 @@ export function Booking() {
     const [openDetails, setOpenDetails] = useState(false);
 
     const changeDate = (date) => {
+        
         setDateState(date);
         setOpenDetails(true);
     };
@@ -28,13 +29,15 @@ export function Booking() {
 
 return (
     <div className="w-full max-w-[30rem] shadow-lg flex flex-col items-center py-12">
+         <Button size="lg" className="flex justify-center items-center gap-4 bg-red-700">
+              Select a Date
+            </Button>
         <Calendar
                 value={dateState}
                 onChange={changeDate}
                 minDate={new Date()}
                 minDetail="month"
             />
-
 
             <p>
                 You've selected{" "}

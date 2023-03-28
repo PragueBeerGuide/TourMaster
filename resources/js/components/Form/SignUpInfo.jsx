@@ -8,9 +8,12 @@ import {
     Button,
     Typography,
     Select,
-    Option,
-} from "@material-tailwind/react";
+    Option
+  } from "@material-tailwind/react";
 
+
+  
+  
 export default function SignUpInfo({ formData, setFormData }) {
     const [value, setValue] = useState();
 
