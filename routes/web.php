@@ -52,7 +52,7 @@ Route::post('/store-admin/edit/{id}', [AdminController::class, 'store'])->name('
 // 'tours' => TourController::class,
 // ]);
 
-Route::resource('bookings', BookingController::class);
-Route::resource('guides', GuideController::class);
-Route::resource('merchandises', MerchandiseController::class);
+Route::resource('bookings', BookingController::class)->middleware('auth');
+Route::resource('guides', GuideController::class)->middleware('auth');
+Route::resource('merchandises', MerchandiseController::class)->middleware('auth');
 Route::resource('tours', TourController::class);

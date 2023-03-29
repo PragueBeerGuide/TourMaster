@@ -34,6 +34,7 @@ class TourController extends Controller
             'name' => 'required|max:255',
             'is_private' => 'boolean',
         ]);
+        dd($storeData);
         $tour = Tour::create($storeData);
         return redirect('/tours')->with('success', 'New tour has been saved');
     }
@@ -64,6 +65,7 @@ class TourController extends Controller
             'name' => 'required|max:255',
             'is_private' => 'boolean',
         ]);
+        dd($updateData);
         Tour::whereId($id)->update($updateData);
         return redirect('/tours')->with('success', 'Tour has been updated');
     }

@@ -26,7 +26,7 @@
           @foreach($booking as $bookings)
           <tr>
               <td>{{$bookings->id}}</td>
-              <td>{{$bookings->customer_id}}</td>
+              <td>{{$bookings->customer->name}}</td>
               <td>{{$bookings->event_id}}</td>
               <td>{{$bookings->num_of_pax}}</td>
               <td>{{$bookings->extra_hotel_pick_up}}</td>
