@@ -25,8 +25,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/calendar', function () {
-    return view('welcome')->name('calendar');
+Route::get('/calendar/{tourId}', function () {
+    return view('welcome');
 });
 
 Route::get('/tours', function () {
