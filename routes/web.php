@@ -25,9 +25,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/beer-tours', function () {
+Route::get('/calendar/{tourId}', function () {
     return view('welcome');
 });
+
+Route::get('/tours', function () {
+    return view('welcome');
+});
+
+Route::get('/tour', [TourController::class, 'tours'])->name('tours');
 
 Route::get('/dashboard', function () {
     return view('welcome');
@@ -44,13 +50,6 @@ Route::post('/customer/action', [CustomerController::class, 'action'])->name('cu
 Route::get('/show-admin/{id}', [AdminController::class, 'show'])->name('show-admin');
 
 Route::post('/store-admin/edit/{id}', [AdminController::class, 'store'])->name('store-admin');
-
-// Route::resources([
-// 'bookings' => BookingController::class,
-// 'guides' => GuideController::class,
-// 'merchandises' => MerchandiseController::class,
-// 'tours' => TourController::class,
-// ]);
 
 Route::resource('bookings', BookingController::class)->middleware('auth');
 Route::resource('guides', GuideController::class)->middleware('auth');

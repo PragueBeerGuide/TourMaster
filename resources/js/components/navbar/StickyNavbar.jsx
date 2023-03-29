@@ -157,7 +157,7 @@ export default function StickyNavbar() {
           Prague Beer Tours
         </Typography>
         <Typography color="gray" className="font-normal">
-        Discover the best hidden local pubs carefully selected by a beer sommelier and enjoy some of the finest Czech beers in great company.
+        Discover the best hidden local pubs carefully selected by a beer sommelier, and enjoy some of the finest Czech beers in great company.
         </Typography>
         <Button size="lg" className="flex justify-center items-center gap-1"
               onClick={() => setOpenDetails(!openDetails)}
