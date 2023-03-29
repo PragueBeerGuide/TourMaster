@@ -25,7 +25,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/beer-tours', function () {
+Route::get('/calendar', function () {
     return view('welcome');
 });
 
