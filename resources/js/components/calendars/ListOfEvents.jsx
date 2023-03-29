@@ -1,43 +1,62 @@
 import { Tooltip } from "@material-tailwind/react";
-import { useState } from "react";
-import {ChevronRightIcon,} from "@heroicons/react/24/outline";
+import { useEffect, useState } from "react";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import Form from "../Form/UseMultistepForm";
 
-export default function ListOfEvents({date}) {
-
+export default function ListOfEvents({ date }) {
     const [displayForm, setDisplayForm] = useState(false);
+
     const handleClick = () => {
         setDisplayForm(true);
-      };
+    };
+
+    const [eventInfo, setEventInfo] = useState([]);
+    const getData = async () => {
+        try {
+            const response = await axios.get("http://tourmaster.test/events");
+            setEventInfo(response.data);
+        } catch (error) {
+            console.log(error.response);
+        }
+    };
+
+    useEffect(() => {
+        getData();
+    }, []);
+
     return (
         <>
-        <Tooltip
-            content="8 remaining"
-            animate={{
-            mount: { scale: 1, x: 55, y: 57 },
-            unmount: { scale: 0, y: 30 },
-        }}
-        >
-            <button 
-                className="border-2 w-full hover:bg-orange-100"
-                onClick={handleClick}
-                data-tooltip-target="tooltip-top"
+            <Tooltip
+                content="8 remaining"
+                animate={{
+                    mount: { scale: 1, x: 55, y: 57 },
+                    unmount: { scale: 0, y: 30 },
+                }}
             >
-                <div className="flex px-5 py-3">
-                    <div className="flex flex-col items-start w-3/4 ">
-                        <div className="font-bold text-gray-900 " >Walking Beer Tour</div>
-                        <div className="text-gray-600 text-sm">6:00 PM</div>
-                    </div>
+                <button
+                    className="border-2 w-full hover:bg-orange-100"
+                    onClick={handleClick}
+                    data-tooltip-target="tooltip-top"
+                >
+                    <div className="flex px-5 py-3">
+                        <div className="flex flex-col items-start w-3/4 ">
+                            <div className="font-bold text-gray-900 ">
+                                Walking Beer Tour
+                            </div>
+                            <div className="text-gray-600 text-sm">6:00 PM</div>
+                        </div>
                         <div className="flex font-bold items-center justify-around text-teal-800  w-1/4">
                             <div>Available</div>
-                            <ChevronRightIcon strokeWidth={2} className="h-5 w-5" /> 
-                            
+                            <ChevronRightIcon
+                                strokeWidth={2}
+                                className="h-5 w-5"
+                            />
                         </div>
-                </div>
-            </button>
-        </Tooltip>
-            
-        {displayForm && <Form date={date} />}
+                    </div>
+                </button>
+            </Tooltip>
+
+            {displayForm && <Form date={date} />}
         </>
-    )
+    );
 }

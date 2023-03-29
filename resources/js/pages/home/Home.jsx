@@ -6,38 +6,33 @@ import { useEffect, useState } from "react";
 import moment from "moment";
 import axios from "axios";
 
-
-
 export default function Home() {
-  const [tourID, setTourID] = useState(0);
-  const [tourInfo, settourInfo] = useState([]);
-  const getData = async () => { 
-    try {
-      const response = await axios.get("http://tourmaster.test/tour");
-      console.log(response)
-      settourInfo(response.data);
-    } catch (error) {
-      console.log(error.response);
-    }
-  
-};
-  useEffect(() => {
+    const [tourID, setTourID] = useState(0);
+    const [tourInfo, settourInfo] = useState([]);
+    const getData = async () => {
+        try {
+            const response = await axios.get(`${window.location.origin}/tour`);
+            console.log(response);
+            settourInfo(response.data);
+        } catch (error) {
+            console.log(error.response);
+        }
+    };
+    useEffect(() => {
+        getData();
+    }, []);
+    return (
+        <>
+            <StickyNavbar />
 
-    getData();
-  }, []);
-    return(
-      <>
-        <StickyNavbar />
-        
-        <div className="flex flex-col-reverse md:flex-row">
-          {/* <Testimonial /> */}
-          {tourInfo
-                        ? tourInfo.map((tour) => (
-                          
-                              <TourSummary tourName={tour.name} tourID={tour.id}/>
-                          ))
-                        : "Loading events"}
-        </div>
+            <div className="flex flex-col-reverse md:flex-row">
+                {/* <Testimonial /> */}
+                {tourInfo
+                    ? tourInfo.map((tour) => (
+                          <TourSummary tourName={tour.name} tourID={tour.id} />
+                      ))
+                    : "Loading events"}
+            </div>
 
             <Footer />
         </>

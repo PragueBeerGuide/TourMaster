@@ -25,9 +25,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/calendar', function () {
+    return view('welcome');
+});
+
 Route::get('/tours', function () {
     return view('welcome');
 });
+
 Route::get('/tour', [TourController::class, 'tours'])->name('tours');
 
 Route::get('/dashboard', function () {
@@ -47,3 +52,5 @@ Route::get('/show-admin/{id}', [AdminController::class, 'show'])->name('show-adm
 Route::post('/store-admin/edit/{id}', [AdminController::class, 'store'])->name('store-admin');
 
 Route::resource('guides', GuideController::class);
+Route::resource('merchandises', MerchandiseController::class);
+Route::resource('tours', TourController::class);
