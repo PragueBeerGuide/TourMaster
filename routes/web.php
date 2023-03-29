@@ -29,6 +29,12 @@ Route::get('/calendar', function () {
     return view('welcome');
 });
 
+Route::get('/tours', function () {
+    return view('welcome');
+});
+
+Route::get('/tour', [TourController::class, 'tours'])->name('tours');
+
 Route::get('/dashboard', function () {
     return view('welcome');
 });
@@ -39,22 +45,12 @@ Route::get('/events', [EventController::class, 'events'])->name('events');
 
 Route::post('/events/action', [EventController::class, 'action'])->name('action');
 
-
-
 Route::post('/customer/action', [CustomerController::class, 'action'])->name('customer-action');
 
 Route::get('/show-admin/{id}', [AdminController::class, 'show'])->name('show-admin');
 
 Route::post('/store-admin/edit/{id}', [AdminController::class, 'store'])->name('store-admin');
 
-// Route::resources([
-// 'bookings' => BookingController::class,
-// 'guides' => GuideController::class,
-// 'merchandises' => MerchandiseController::class,
-// 'tours' => TourController::class,
-// ]);
-
-Route::resource('bookings', BookingController::class);
 Route::resource('guides', GuideController::class);
 Route::resource('merchandises', MerchandiseController::class);
 Route::resource('tours', TourController::class);
