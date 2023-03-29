@@ -36,8 +36,8 @@ export default function Form({ date }) {
         return emailRegex.test(email);
     };
 
-    const postDate = async () => {
-        const response = await axios.post("/home/action", {
+    const postData = async () => {
+        const responseDate = await axios.post("/events/action", {
             title: `${formData.firstName} ${formData.lastName}`,
             start: `${
                 moment(date).format("Y-MM-DD HH:mm:ss").split(" ")[0]
@@ -47,23 +47,20 @@ export default function Form({ date }) {
             } 18:00:00`,
             type: "add",
         });
-        if (response.status === 200) {
+
+        const responseCustomer = await axios.post("/customer/action", {
+            name: `${formData.firstName} ${formData.lastName}`,
+            email: `${formData.email}`,
+            phone: `${formData.telephone}`,
+            type: "add",
+        });
+
+        if (responseDate.status === 200 && responseCustomer.status === 200) {
             alert("jdeme na pívo!!!");
+        } else {
+            alert(responseDate.status);
         }
     };
-
-    const postCustomerInfo = async () => {
-        const response = await axios.post("/customer/action", {
-                name: `${formData.firstName} ${formData.lastName}`,
-                email: `${formData.email}`,
-                phone: `${formData.telephone}`,
-                type: "add"
-        });
-        if (response.status === 200) {
-            console.log('success')
-        }
-    }
-
 
     const FormTitles = [
         "How many are joining?",
@@ -104,8 +101,7 @@ export default function Form({ date }) {
                     <Button
                         onClick={() => {
                             if (page === FormTitles.length - 1) {
-                                postDate();
-                                postCustomerInfo();
+                                postData();
                             } else if (
                                 page === 1 &&
                                 (!formData.firstName ||
