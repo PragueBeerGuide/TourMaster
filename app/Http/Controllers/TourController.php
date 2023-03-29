@@ -62,7 +62,7 @@ class TourController extends Controller
     {
         $updateData = $request->validate([
             'name' => 'required|max:255',
-            
+            'is_private' => 'boolean',
         ]);
         Tour::whereId($id)->update($updateData);
         return redirect('/tours')->with('success', 'Tour has been updated');

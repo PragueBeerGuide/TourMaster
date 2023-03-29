@@ -11,7 +11,7 @@
           <div class="form-group">
               @csrf
               @method('PATCH')
-              <label for="Name">Name</label>
+              <label for="name">Name</label>
               <input type="text" class="form-control" name="name" value="{{ $tour->name }}"/>
           </div>
           <div class="form-group">

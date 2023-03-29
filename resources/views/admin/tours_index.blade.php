@@ -23,7 +23,7 @@
           <tr>
               <td>{{$tours->id}}</td>
               <td>{{$tours->name}}</td>
-              <td>{{$tours->private}}</td>
+              <td>{{$tours->is_private}}</td>
               <td class="text-center">
                   <a href="{{ route('tours.edit', $tours->id)}}" class="btn btn-primary btn-sm">Edit</a>
                   <form action="{{ route('tours.destroy', $tours->id)}}" method="post" style="display: inline-block">
