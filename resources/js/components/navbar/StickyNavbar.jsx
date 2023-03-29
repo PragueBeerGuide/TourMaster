@@ -42,7 +42,7 @@ export default function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="/tours" className="flex items-center">
+        <a href="/beer-tours" className="flex items-center">
           Tours
         </a>
       </Typography>

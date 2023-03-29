@@ -1,19 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use App\Models\Guide;
-// use SweetAlert;
 
-class GuideController extends Controller
+use Illuminate\Http\Request;
+use App\Models\Merchandise;
+
+class MerchandiseController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $guide = Guide::all();
-        return view('admin.guides_index', compact('guide'));
+        $merchandise = Merchandise::all();
+        return view('admin.merchandises_index', compact('merchandise'));
 
     }
 
@@ -22,7 +22,7 @@ class GuideController extends Controller
      */
     public function create()
     {
-        return view('admin.guides_create');
+        return view('admin.merchandises_create');
     }
 
     /**
@@ -31,11 +31,10 @@ class GuideController extends Controller
     public function store(Request $request)
     {
         $storeData = $request->validate([
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
+            'name' => 'required|max:255',
         ]);
-        $guide = Guide::create($storeData);
-        return redirect('/guides')->with('success', 'New guide has been saved');
+        $merchandise = Merchandise::create($storeData);
+        return redirect('/merchandises')->with('success', 'New merchandise has been saved');
     }
 
     /**
@@ -51,8 +50,8 @@ class GuideController extends Controller
      */
     public function edit(string $id)
     {
-        $guide = Guide::findOrFail($id);
-        return view('admin.guides_edit', compact('guide'));
+        $merchandise = Merchandise::findOrFail($id);
+        return view('admin.merchandises_edit', compact('merchandise'));
     }
 
     /**
@@ -61,11 +60,10 @@ class GuideController extends Controller
     public function update(Request $request, string $id)
     {
         $updateData = $request->validate([
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
+            'name' => 'required|max:255',
         ]);
-        Guide::whereId($id)->update($updateData);
-        return redirect('/guides')->with('success', 'Guide has been updated');
+        Merchandise::whereId($id)->update($updateData);
+        return redirect('/merchandises')->with('success', 'Merchandise has been updated');
     }
 
     /**
@@ -73,8 +71,9 @@ class GuideController extends Controller
      */
     public function destroy(string $id)
     {
-        $guide = Guide::findOrFail($id);
-        $guide -> delete();
-        return redirect('/guides')->with('danger', 'Guide has been deleted');
+        $merchandise = Merchandise::findOrFail($id);
+        $merchandise -> delete();
+        return redirect('/merchandises')->with('danger', 'Merchandise has been deleted');
     }
 }
+

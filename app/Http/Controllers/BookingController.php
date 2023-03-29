@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\Guide;
-// use SweetAlert;
+use App\Models\Booking;
 
-class GuideController extends Controller
+class BookingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $guide = Guide::all();
-        return view('admin.guides_index', compact('guide'));
+        $booking = Booking::all();
+        return view('admin.bookings_index', compact('booking'));
 
     }
 
@@ -22,7 +21,7 @@ class GuideController extends Controller
      */
     public function create()
     {
-        return view('admin.guides_create');
+        return view('admin.bookings_create');
     }
 
     /**
@@ -34,8 +33,8 @@ class GuideController extends Controller
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
         ]);
-        $guide = Guide::create($storeData);
-        return redirect('/guides')->with('success', 'New guide has been saved');
+        $booking = Booking::create($storeData);
+        return redirect('/bookings')->with('success', 'New booking has been saved');
     }
 
     /**
@@ -51,8 +50,8 @@ class GuideController extends Controller
      */
     public function edit(string $id)
     {
-        $guide = Guide::findOrFail($id);
-        return view('admin.guides_edit', compact('guide'));
+        $booking = Booking::findOrFail($id);
+        return view('admin.bookings_edit', compact('booking'));
     }
 
     /**
@@ -64,8 +63,8 @@ class GuideController extends Controller
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
         ]);
-        Guide::whereId($id)->update($updateData);
-        return redirect('/guides')->with('success', 'Guide has been updated');
+        Booking::whereId($id)->update($updateData);
+        return redirect('/bookings')->with('success', 'booking has been updated');
     }
 
     /**
@@ -73,8 +72,8 @@ class GuideController extends Controller
      */
     public function destroy(string $id)
     {
-        $guide = Guide::findOrFail($id);
-        $guide -> delete();
-        return redirect('/guides')->with('danger', 'Guide has been deleted');
+        $booking = Booking::findOrFail($id);
+        $booking -> delete();
+        return redirect('/bookings')->with('danger', 'booking has been deleted');
     }
 }

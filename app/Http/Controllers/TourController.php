@@ -1,19 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use App\Models\Guide;
-// use SweetAlert;
 
-class GuideController extends Controller
+use App\Models\Tour;
+use Illuminate\Http\Request;
+
+class TourController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $guide = Guide::all();
-        return view('admin.guides_index', compact('guide'));
+        $tour = Tour::all();
+        return view('admin.tours_index', compact('tour'));
 
     }
 
@@ -22,7 +22,7 @@ class GuideController extends Controller
      */
     public function create()
     {
-        return view('admin.guides_create');
+        return view('admin.tours_create');
     }
 
     /**
@@ -31,11 +31,11 @@ class GuideController extends Controller
     public function store(Request $request)
     {
         $storeData = $request->validate([
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
+            'name' => 'required|max:255',
+            'is_private' => 'boolean',
         ]);
-        $guide = Guide::create($storeData);
-        return redirect('/guides')->with('success', 'New guide has been saved');
+        $tour = Tour::create($storeData);
+        return redirect('/tours')->with('success', 'New tour has been saved');
     }
 
     /**
@@ -51,8 +51,8 @@ class GuideController extends Controller
      */
     public function edit(string $id)
     {
-        $guide = Guide::findOrFail($id);
-        return view('admin.guides_edit', compact('guide'));
+        $tour = Tour::findOrFail($id);
+        return view('admin.tours_edit', compact('tour'));
     }
 
     /**
@@ -61,11 +61,11 @@ class GuideController extends Controller
     public function update(Request $request, string $id)
     {
         $updateData = $request->validate([
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
+            'name' => 'required|max:255',
+            'is_private' => 'boolean',
         ]);
-        Guide::whereId($id)->update($updateData);
-        return redirect('/guides')->with('success', 'Guide has been updated');
+        Tour::whereId($id)->update($updateData);
+        return redirect('/tours')->with('success', 'Tour has been updated');
     }
 
     /**
@@ -73,8 +73,8 @@ class GuideController extends Controller
      */
     public function destroy(string $id)
     {
-        $guide = Guide::findOrFail($id);
-        $guide -> delete();
-        return redirect('/guides')->with('danger', 'Guide has been deleted');
+        $tour = Tour::findOrFail($id);
+        $tour -> delete();
+        return redirect('/tours')->with('danger', 'Tour has been deleted');
     }
 }

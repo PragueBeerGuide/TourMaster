@@ -1,10 +1,14 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\GuideController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MerchandiseController;
+use App\Http\Controllers\TourController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,7 +25,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tours', function () {
+Route::get('/beer-tours', function () {
     return view('welcome');
 });
 
@@ -41,4 +45,14 @@ Route::get('/show-admin/{id}', [AdminController::class, 'show'])->name('show-adm
 
 Route::post('/store-admin/edit/{id}', [AdminController::class, 'store'])->name('store-admin');
 
+// Route::resources([
+// 'bookings' => BookingController::class,
+// 'guides' => GuideController::class,
+// 'merchandises' => MerchandiseController::class,
+// 'tours' => TourController::class,
+// ]);
+
+Route::resource('bookings', BookingController::class);
 Route::resource('guides', GuideController::class);
+Route::resource('merchandises', MerchandiseController::class);
+Route::resource('tours', TourController::class);
