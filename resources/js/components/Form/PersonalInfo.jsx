@@ -1,7 +1,6 @@
 import { Card } from "@material-tailwind/react";
 import React, { useEffect, useState } from "react";
 import Updater from "./Button";
-import Confirmation from "./Confirmation";
 import axios from "axios";
 
 export default function PersonalInfo({ formData, setFormData }) {
@@ -26,7 +25,7 @@ export default function PersonalInfo({ formData, setFormData }) {
                     {eventInfo
                         ? eventInfo.map((event) => (
                               <div>
-                                  Starts at:{event.start.split(" ")[1]} - Ends at:{event.end.split(" ")[1]}
+                                  Starts at:{event.start.split(" ")[1]} - Ends at:{event.end.split(" ")[1]}...
                                   if it ends at all!
                               </div>
                           ))
