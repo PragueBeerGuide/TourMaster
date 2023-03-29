@@ -24,6 +24,7 @@ import {
    
   export default function TourSummary() {
     const [openDetails, setOpenDetails] = useState(false);
+    const [tourID, setTourID] = useState(0);
 
     return (
       <div className="w-full max-w-[30rem] shadow-lg">
