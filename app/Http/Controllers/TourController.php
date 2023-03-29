@@ -10,11 +10,15 @@ class TourController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function tours()
+    {
+        $tour = Tour::all();
+        return response()->json($tour);
+    }
     public function index()
     {
         $tour = Tour::all();
         return view('admin.tours_index', compact('tour'));
-
     }
 
     /**
@@ -74,7 +78,7 @@ class TourController extends Controller
     public function destroy(string $id)
     {
         $tour = Tour::findOrFail($id);
-        $tour -> delete();
+        $tour->delete();
         return redirect('/tours')->with('danger', 'Tour has been deleted');
     }
 }
