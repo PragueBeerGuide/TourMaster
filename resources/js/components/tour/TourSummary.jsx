@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import TourDetail from "./TourDetail";
+import { Navigate, Route, useNavigate } from 'react-router';
+
 
 import {
     Card,
@@ -25,6 +27,11 @@ import {
   export default function TourSummary() {
     const [openDetails, setOpenDetails] = useState(false);
     const [tourID, setTourID] = useState(0);
+    const navigate = useNavigate();
+
+   const handleClick = () => {
+       navigate('/calendar');
+   } 
 
     return (
       <div className="w-full max-w-[30rem] shadow-lg">
@@ -50,7 +57,7 @@ import {
               </Typography>
             </div>
             <Typography color="gray">
-              Discover the best hidden local pubs carefully selected by a beer sommelier and enjoy some of the finest Czech beers in a great company.
+              Discover the best hidden local pubs carefully selected by a beer sommelier and enjoy some of the finest Czech beers in great company.
             </Typography>
             <div className="group mt-8 flex justify-around items-center gap-3">
               <Tooltip content="$59 per person">
@@ -91,7 +98,7 @@ import {
               }
 
             </Button >
-            <Button size="lg" className={`flex justify-center items-center gap-4 ${openDetails ? "bg-red-700" : ''} `}>
+            <Button onClick={ handleClick} size="lg" className={`flex justify-center items-center gap-4 ${openDetails ? "bg-red-700" : ''} `}>
               Book now <ArrowRightCircleIcon className="h-4 w-4"/>
             </Button>
           </CardFooter>
