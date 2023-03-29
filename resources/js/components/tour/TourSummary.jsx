@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import TourDetail from "./TourDetail";
-import { Navigate, Route, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 
 
 import {
