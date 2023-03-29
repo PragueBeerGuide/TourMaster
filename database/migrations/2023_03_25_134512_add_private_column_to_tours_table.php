@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('tours', function (Blueprint $table) {
-            $table->boolean('private')->after('name')->comment('true for private tours, false for join-in tours')->default(false);
+            $table->boolean('is_private')->after('name')->comment('true for private tours, false for join-in tours')->default(false);
         });
     }
 

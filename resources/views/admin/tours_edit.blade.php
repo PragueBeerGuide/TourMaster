@@ -12,11 +12,11 @@
               @csrf
               @method('PATCH')
               <label for="Name">Name</label>
-              <input type="text" class="form-control" name="Name" value="{{ $tour->name }}"/>
+              <input type="text" class="form-control" name="name" value="{{ $tour->name }}"/>
           </div>
           <div class="form-group">
-              <label for="private">Last name</label>
-              <input type="text" class="form-control" name="private" value="{{ $tour->private }}"/>
+              <label for="is_private">PVT</label>
+              <input type="checkbox" class="form-control" name="is_private" value="{{ $tour->is_private }}"/>
           </div>
           <button type="submit" class="btn btn-block btn-danger">Update tour info</button>
       </form>

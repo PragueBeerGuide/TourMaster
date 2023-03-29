@@ -16,19 +16,19 @@ class TourSeeder extends Seeder
         DB::table('tours')->insert([
             [
                 'name' => 'Public Beer Tour',
-                'private' => false
+                'is_private' => false
             ],[
     
                 'name' => 'PVT Beer Tour',
-                'private' => true
+                'is_private' => true
             ],[
     
                 'name' => 'Public Beer Tasting',
-                'private' => false
+                'is_private' => false
             ],[
     
                 'name' => 'PVT Beer Tasting',
-                'private' => true
+                'is_private' => true
             ]
             ]);
     }

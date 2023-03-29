@@ -32,7 +32,7 @@ class TourController extends Controller
     {
         $storeData = $request->validate([
             'name' => 'required|max:255',
-            'private' => 'boolean',
+            'is_private' => 'boolean',
         ]);
         $tour = Tour::create($storeData);
         return redirect('/tours')->with('success', 'New tour has been saved');

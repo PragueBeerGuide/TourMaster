@@ -14,8 +14,8 @@
               <input type="text" class="form-control" name="name"/>
           </div>
           <div class="form-group">
-              <label for="private">Private</label>
-              <input type="text" class="form-control" name="private"/>
+              <label for="is_private">PVT</label>
+              <input type="checkbox" class="form-control" name="is_private" />
           </div>
           <button type="submit" class="btn btn-block btn-danger">Create new tour</button>
       </form>
