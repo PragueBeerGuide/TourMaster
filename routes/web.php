@@ -39,6 +39,8 @@ Route::get('/events', [EventController::class, 'events'])->name('events');
 
 Route::post('/events/action', [EventController::class, 'action'])->name('action');
 
+
+
 Route::post('/customer/action', [CustomerController::class, 'action'])->name('customer-action');
 
 Route::get('/show-admin/{id}', [AdminController::class, 'show'])->name('show-admin');

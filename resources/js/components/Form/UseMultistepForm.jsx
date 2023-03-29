@@ -27,7 +27,7 @@ export default function Form({ date }) {
         negcount: "-",
         pluscount: "+",
         count: 0,
-        time: "6pm",
+        time: "6pm"
     });
 
     const isEmailValid = (email) => {

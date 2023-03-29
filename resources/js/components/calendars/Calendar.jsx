@@ -16,7 +16,7 @@ import {
 } from "@material-tailwind/react";
 import Form from "../Form/UseMultistepForm";
 
-export function Booking() {
+export default function CustomCalendar() {
     const [dateState, setDateState] = useState(new Date());
     const [openDetails, setOpenDetails] = useState(false);
 
