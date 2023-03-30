@@ -7,9 +7,12 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    public function events()
+    public function events($tourId, $date)
     {
-        $data = Event::all();
+        $data = Event::query()
+            ->whereDate('start', $date)
+            ->where('tour_id', $tourId)
+            ->get();
 
         return response()->json($data);
     }
@@ -46,6 +49,12 @@ class EventController extends Controller
             $event = Event::find($request->id)->delete();
 
             return response()->json($event);
+        }
+
+        if ($request->type == 'increaseNumberOfCustomers') {
+            $event = Event::findOrFail($request->id);
+            $event->capacity += $request->count;
+            $event->save();
         }
     }
 }

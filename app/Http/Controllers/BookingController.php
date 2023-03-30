@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Models\Booking;
+use App\Models\Customer;
 use Ramsey\Uuid\Type\Integer;
 
 class BookingController extends Controller
@@ -14,7 +16,6 @@ class BookingController extends Controller
     {
         $booking = Booking::all();
         return view('admin.bookings_index', compact('booking'));
-
     }
 
     /**
@@ -22,6 +23,7 @@ class BookingController extends Controller
      */
     public function create()
     {
+
         return view('admin.bookings_create');
     }
 
@@ -82,7 +84,27 @@ class BookingController extends Controller
     public function destroy(string $id)
     {
         $booking = Booking::findOrFail($id);
-        $booking -> delete();
+        $booking->delete();
         return redirect('/bookings')->with('danger', 'booking has been deleted');
+    }
+
+    public function CustomerCreate(Request $request)
+    {
+        $customer = Customer::where('email', $request->customerEmail)->firstOrFail();
+
+        $request->validate([
+            'eventId' => 'required|max:255',
+            'count' => 'required|max:255',
+        ]);
+
+        $booking = Booking::create([
+            'customer_id' => $customer->id,
+            'event_id'    => $request->eventId,
+            'num_of_pax'  => $request->count,
+            'extra_hotel_pick_up' => 0,
+            'extra_drink_package'  => 0,
+        ]);
+
+        return response()->json($booking);
     }
 }
