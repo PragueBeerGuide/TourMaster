@@ -13,7 +13,7 @@ import {
     Typography,
 } from "@material-tailwind/react";
 
-export default function Form({ date }) {
+export default function Form({ date, eventId }) {
     const [page, setPage] = useState(0);
 
     let formIsValid = true;
@@ -27,7 +27,7 @@ export default function Form({ date }) {
         negcount: "-",
         pluscount: "+",
         count: 0,
-        time: "6pm"
+        time: "6pm",
     });
 
     const isEmailValid = (email) => {
@@ -37,17 +37,6 @@ export default function Form({ date }) {
     };
 
     const postData = async () => {
-        const responseDate = await axios.post("/events/action", {
-            title: `${formData.firstName} ${formData.lastName}`,
-            start: `${
-                moment(date).format("Y-MM-DD HH:mm:ss").split(" ")[0]
-            } 18:00:00`,
-            end: `${
-                moment(date).format("Y-MM-DD HH:mm:ss").split(" ")[0]
-            } 18:00:00`,
-            type: "add",
-        });
-
         const responseCustomer = await axios.post("/customer/action", {
             name: `${formData.firstName} ${formData.lastName}`,
             email: `${formData.email}`,
@@ -55,10 +44,26 @@ export default function Form({ date }) {
             type: "add",
         });
 
-        if (responseDate.status === 200 && responseCustomer.status === 200) {
+        const responseCapacity = await axios.post("/events/action", {
+            id: eventId,
+            count: formData.count,
+            type: "increaseNumberOfCustomers",
+        });
+
+        const responseBooking = await axios.post("/booking/CustomerCreate", {
+            eventId: eventId,
+            count: formData.count,
+            customerEmail: formData.email,
+        });
+
+        if (
+            responseCapacity.status === 200 &&
+            responseCustomer.status === 200 &&
+            responseBooking.status === 200
+        ) {
             alert("jdeme na pívo!!!");
         } else {
-            alert(responseDate.status);
+            alert("neco si zapomel vyplnit");
         }
     };
 

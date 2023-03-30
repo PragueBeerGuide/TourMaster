@@ -50,5 +50,11 @@ class EventController extends Controller
 
             return response()->json($event);
         }
+
+        if ($request->type == 'increaseNumberOfCustomers') {
+            $event = Event::findOrFail($request->id);
+            $event->capacity += $request->count;
+            $event->save();
+        }
     }
 }

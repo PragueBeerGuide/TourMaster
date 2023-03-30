@@ -45,6 +45,8 @@ Route::get('/events/{tourId}/{formatedDate}', [EventController::class, 'events']
 
 Route::post('/events/action', [EventController::class, 'action'])->name('action');
 
+Route::post('/booking/CustomerCreate', [BookingController::class, 'CustomerCreate'])->name('CustomerCreate');
+
 Route::post('/customer/action', [CustomerController::class, 'action'])->name('customer-action');
 
 Route::get('/show-admin/{id}', [AdminController::class, 'show'])->name('show-admin');
