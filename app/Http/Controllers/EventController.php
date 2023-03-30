@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+    public function allEvents()
+    {
+        $data = Event::all();
+
+        return response()->json($data);
+    }
+
     public function events($tourId, $date)
     {
         $data = Event::query()

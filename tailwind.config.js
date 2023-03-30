@@ -9,8 +9,9 @@ module.exports = withMT({
     "./resources/**/*.jsx",
     "./resources/js/src/App.jsx",
     "./resources/views/welcome.blade.php",
-    "./index.html",
+    "./resources/views/auth/login.blade.php",
     "./src/**/*.{js, jsx}"
+  
   ],
   theme: {
     screens: {

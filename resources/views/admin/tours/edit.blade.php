@@ -15,8 +15,8 @@
               <input type="text" class="form-control" name="name" value="{{ $tour->name }}"/>
           </div>
           <div class="form-group">
-              <label for="is_private">PVT</label>
-              <input type="checkbox" class="form-control" name="is_private" value="{{ $tour->is_private }}"/>
+              <label for="is_private">PVT tour</label>
+              <input type="checkbox" class="form-control" name="is_private" value="1"/>
           </div>
           <button type="submit" class="btn btn-block btn-danger">Update tour info</button>
       </form>

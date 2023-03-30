@@ -41,6 +41,8 @@ Route::get('/dashboard', function () {
 
 Route::get('/home', [HomeController::class, 'home'])->middleware('auth')->name('home');
 
+Route::get('/events', [EventController::class, 'allEvents'])->name('allEvents');
+
 Route::get('/events/{tourId}/{formatedDate}', [EventController::class, 'events'])->name('events');
 
 Route::post('/events/action', [EventController::class, 'action'])->name('action');
@@ -53,6 +55,7 @@ Route::get('/show-admin/{id}', [AdminController::class, 'show'])->name('show-adm
 
 Route::post('/store-admin/edit/{id}', [AdminController::class, 'store'])->name('store-admin');
 
-Route::resource('guides', GuideController::class);
-Route::resource('merchandises', MerchandiseController::class);
-Route::resource('tours', TourController::class);
+Route::resource('bookings', BookingController::class)->middleware('auth');
+Route::resource('guides', GuideController::class)->middleware('auth');
+Route::resource('merchandises', MerchandiseController::class)->middleware('auth');
+Route::resource('tours', TourController::class)->middleware('auth');
