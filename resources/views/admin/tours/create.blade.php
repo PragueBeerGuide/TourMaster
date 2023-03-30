@@ -14,10 +14,8 @@
               <input type="text" class="form-control" name="name"/>
           </div>
           <div class="form-group">
-              <label for="is_private">Public</label>
-              <input type="radio" value="0" class="form-control" name="is_private"/>
-              <label for="is_private">Private</label>
-              <input type="radio" value="1" class="form-control" name="is_private"/>
+              <label for="is_private">PVT tour</label>
+              <input type="checkbox" value="1" class="form-control" name="is_private"/>
           </div>
           <button type="submit" class="btn btn-block btn-danger">Create new tour</button>
       </form>

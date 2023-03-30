@@ -14,6 +14,13 @@ return new class extends Migration
         Schema::create('tours', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('title');
+            $table->longText('description');
+            $table->longText('highlights');
+            $table->string('meeting_point');
+            $table->longText('inclusions')->nullable();
+            $table->string('image_link')->nullable();	
+            $table->boolean('is_private')->comment('true for private tours, false for join-in tours')->default(false);
             $table->timestamps();
         });
     }

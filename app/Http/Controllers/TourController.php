@@ -18,7 +18,7 @@ class TourController extends Controller
     public function index()
     {
         $tour = Tour::all();
-        return view('admin.tours_index', compact('tour'));
+        return view('admin.tours.index', compact('tour'));
     }
 
     /**
@@ -26,7 +26,7 @@ class TourController extends Controller
      */
     public function create()
     {
-        return view('admin.tours_create');
+        return view('admin.tours.create');
     }
 
     /**
@@ -34,11 +34,16 @@ class TourController extends Controller
      */
     public function store(Request $request)
     {
-        $storeData = $request->validate([
-            'name' => 'required|max:255',
-            'is_private' => 'boolean',
-        ]);
-        $tour = Tour::create($storeData);
+        $request->name;
+        $request->title;
+        $request->description;
+        $request->highlights;
+        $request->meeting_point;
+        $request->inclusions;
+        $request->image_link;
+        $request->boolean( key:'is_private');
+        
+        $tour = Tour::create($request->all());
         return redirect('/tours')->with('success', 'New tour has been saved');
     }
 
@@ -56,7 +61,7 @@ class TourController extends Controller
     public function edit(string $id)
     {
         $tour = Tour::findOrFail($id);
-        return view('admin.tours_edit', compact('tour'));
+        return view('admin.tours.edit', compact('tour'));
     }
 
     /**
@@ -64,11 +69,16 @@ class TourController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $updateData = $request->validate([
-            'name' => 'required|max:255',
-            'is_private' => 'boolean',
-        ]);
-        Tour::whereId($id)->update($updateData);
+        $request->name;
+        $request->title;
+        $request->description;
+        $request->highlights;
+        $request->meeting_point;
+        $request->inclusions;
+        $request->image_link;
+        $request->boolean( key:'is_private');
+
+        Tour::whereId($id)->update($request->all());
         return redirect('/tours')->with('success', 'Tour has been updated');
     }
 

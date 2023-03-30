@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Booking;
 use App\Models\Customer;
+use Ramsey\Uuid\Type\Integer;
 
 class BookingController extends Controller
 {
@@ -32,8 +33,12 @@ class BookingController extends Controller
     public function store(Request $request)
     {
         $storeData = $request->validate([
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
+            'customer_id' => 'required|integer',
+            'event_id'=> 'required|integer',
+            'num_of_pax'=> 'required|integer|max:4',
+            'extra_hotel_pick_up' => 'nullable',
+            'extra_drink_package'=> 'nullable',
+            'merchandise_id'=> 'nullable',
         ]);
         $booking = Booking::create($storeData);
         return redirect('/bookings')->with('success', 'New booking has been saved');
@@ -62,8 +67,12 @@ class BookingController extends Controller
     public function update(Request $request, string $id)
     {
         $updateData = $request->validate([
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
+            'customer_id' => 'required|integer',
+            'event_id'=> 'required|integer',
+            'num_of_pax'=> 'required|integer|max:4',
+            'extra_hotel_pick_up' => 'nullable',
+            'extra_drink_package'=> 'nullable',
+            'merchandise_id'=> 'nullable',
         ]);
         Booking::whereId($id)->update($updateData);
         return redirect('/bookings')->with('success', 'booking has been updated');
