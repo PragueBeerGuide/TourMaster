@@ -7,9 +7,12 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    public function events()
+    public function events($tourId, $date)
     {
-        $data = Event::all();
+        $data = Event::query()
+            ->whereDate('start', $date)
+            ->where('tour_id', $tourId)
+            ->get();
 
         return response()->json($data);
     }

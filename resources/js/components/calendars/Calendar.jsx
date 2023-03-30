@@ -12,27 +12,30 @@ import {
     CardFooter,
     Typography,
     Button,
-    Tooltip
+    Tooltip,
 } from "@material-tailwind/react";
 import Form from "../Form/UseMultistepForm";
+import { useParams } from "react-router-dom";
 
 export default function CustomCalendar() {
+    const [tourId, setTourId] = useState(useParams().tourId);
     const [dateState, setDateState] = useState(new Date());
     const [openDetails, setOpenDetails] = useState(false);
 
     const changeDate = (date) => {
-        
         setDateState(date);
         setOpenDetails(true);
     };
 
-
-return (
-    <div className="w-full max-w-[30rem] shadow-lg flex flex-col items-center py-12">
-         <Button size="lg" className="flex justify-center items-center gap-4 bg-red-700">
-              Select a Date
+    return (
+        <div className="w-full max-w-[30rem] shadow-lg flex flex-col items-center py-12">
+            <Button
+                size="lg"
+                className="flex justify-center items-center gap-4 bg-red-700"
+            >
+                Select a Date
             </Button>
-        <Calendar
+            <Calendar
                 value={dateState}
                 onChange={changeDate}
                 minDate={new Date()}
@@ -44,10 +47,15 @@ return (
                 <b>{moment(dateState).format("MMMM Do YYYY")}</b>
             </p>
 
-            {openDetails ? <><ListOfEvents date={dateState}/></> : null}
-
-        
-
+            {openDetails ? (
+                <>
+                    <ListOfEvents
+                        date={dateState}
+                        tourId={tourId}
+                        setTourId={setTourId}
+                    />
+                </>
+            ) : null}
         </div>
     );
 }
