@@ -41,9 +41,11 @@ Route::get('/dashboard', function () {
 
 Route::get('/home', [HomeController::class, 'home'])->middleware('auth')->name('home');
 
-Route::get('/events', [EventController::class, 'events'])->name('events');
+Route::get('/events/{tourId}/{formatedDate}', [EventController::class, 'events'])->name('events');
 
 Route::post('/events/action', [EventController::class, 'action'])->name('action');
+
+Route::post('/booking/CustomerCreate', [BookingController::class, 'CustomerCreate'])->name('CustomerCreate');
 
 Route::post('/customer/action', [CustomerController::class, 'action'])->name('customer-action');
 
