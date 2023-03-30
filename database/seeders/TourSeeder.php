@@ -18,17 +18,17 @@ class TourSeeder extends Seeder
                 'name' => 'Public BT',
                 'title' => 'Walking Beer Tour', 
                 'description'=> 'Discover the best hidden local pubs carefully selected by a beer sommelier and enjoy some of the finest Czech beers in great company.',
-                'highlights' => 'drink beer, learnt the local pub culture, meet other beer-loving travellers',
+                'highlights' => 'drink beer, learn the local pub culture, meet other beer-loving travellers',
                 'meeting_point' => 'Old Town Square, Prague',
                 'inclusions' => 'tasting of 6 different beers, knowledgable beer expert gudie, map of the best beer venues in Prague',
-                'image_link' => 'https://cdn.pixabay.com/photo/2022/11/15/11/31/beer-7593794__480.jpg',
+                'image_link' => '/img/tours/product_details/walking_beer_tour.webp',
                 'is_private' => false
             ],[
     
                 'name' => 'PVT BT',
                 'title' => 'Private Beer Tour', 
                 'description'=> 'Discover the best hidden local pubs carefully selected by a beer sommelier and enjoy some of the finest Czech beers in great company.',
-                'highlights' => 'drink beer, learnt the local pub culture, exclusive tour only for your group',
+                'highlights' => 'drink beer, learn the local pub culture, exclusive tour only for your group',
                 'meeting_point' => 'Old Town Square, Prague',
                 'inclusions' => 'tasting of 6 different beers, knowledgable beer expert guide, map of the best beer venues in Prague',
                 'image_link' => 'https://cdn.pixabay.com/photo/2022/11/15/11/31/beer-7593794__480.jpg',

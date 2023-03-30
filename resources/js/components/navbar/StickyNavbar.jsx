@@ -155,7 +155,7 @@ export default function StickyNavbar() {
             <Button 
             variant="gradient" 
             size="sm" fullWidth 
-            className="mb-2" fff
+            className="mb-2"
             >  
               <span>Admin</span>
             </Button>
@@ -176,20 +176,6 @@ export default function StickyNavbar() {
         <Typography color="gray" className="font-normal">
         Discover the best hidden local pubs carefully selected by a beer sommelier, and enjoy some of the finest Czech beers in great company.
         </Typography>
-        <Button size="lg" className="flex justify-center items-center gap-1"
-              onClick={() => setOpenDetails(!openDetails)}
-              > 
-              {!openDetails ?
-              <><ArrowUturnDownIcon className="h-4 w-4"/>Show details</>
-              :
-              <><ArrowUturnUpIcon className="h-4 w-4"/>Hide details</>
-              }
-
-            </Button >
-            {openDetails ?
-        <TourDetail />
-        :
-        ""}
       </div>
     </>
   );
