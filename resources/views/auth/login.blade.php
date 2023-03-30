@@ -8,25 +8,12 @@
         Enter your details to login.
     </p>
 
-    {{-- <form action="{{ route('login') }}" method="post">
-
-        @csrf
-
-        Email:<br>
-        <input type="email" name="email" value="{{ old('email') }}"><br>
-        <br>
-
-        Password:<br>
-        <input type="password" name="password" value=""><br>
-        <br>
-
-        <button>Login</button>
-
-    </form> --}}
-
     <form action="{{ route('login') }}" method="post" class="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
         <div class="mb-4 flex flex-col gap-6">
           <div class="relative h-11 w-full min-w-[200px]">
+
+            @csrf
+
             <input
                 type="email" name="email" value="{{ old('email') }}"
                 class="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
@@ -48,8 +35,8 @@
           </div>
         </div>
         <button
-          class="mt-6 block w-full select-none rounded-lg bg-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-          type="button"
+          class="mt-6 block w-full rounded-lg bg-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          type="submit"
           data-ripple-light="true"
         >
           Login
