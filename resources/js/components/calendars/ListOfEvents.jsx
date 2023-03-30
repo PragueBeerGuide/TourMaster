@@ -10,6 +10,7 @@ export default function ListOfEvents({ date, tourId, setTourId }) {
     const [eventId, setEventId] = useState(0);
     const [displayForm, setDisplayForm] = useState(false);
     const formatedDate = moment(date).format("Y-MM-DD HH:mm:ss").split(" ")[0];
+    const time = moment(date).format("Y-MM-DD HH:mm").split(" ")[1];
 
     const handleClick = (capacity, id) => {
         if (capacity === 10) {
@@ -62,7 +63,7 @@ export default function ListOfEvents({ date, tourId, setTourId }) {
                                               {event.title}
                                           </div>
                                           <div className="text-gray-600 text-sm">
-                                              6:00 PM
+                                              {time}
                                           </div>
                                       </div>
                                       <div className="flex font-bold items-center justify-around text-teal-800  w-1/4">
