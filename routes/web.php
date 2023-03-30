@@ -41,6 +41,8 @@ Route::get('/dashboard', function () {
 
 Route::get('/home', [HomeController::class, 'home'])->middleware('auth')->name('home');
 
+Route::get('/events', [EventController::class, 'allEvents'])->name('allEvents');
+
 Route::get('/events/{tourId}/{formatedDate}', [EventController::class, 'events'])->name('events');
 
 Route::post('/events/action', [EventController::class, 'action'])->name('action');
