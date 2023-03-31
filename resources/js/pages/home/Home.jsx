@@ -13,11 +13,12 @@ export default function Home() {
         try {
             const response = await axios.get(`${window.location.origin}/tour`);
             // console.log(response);
+            console.log(window.location.origin);
             settourInfo(response.data);
         } catch (error) {
             // console.log(error.response);
         }
-        console.log(tourInfo);
+        // console.log(tourInfo);
     };
     useEffect(() => {
         getData();
