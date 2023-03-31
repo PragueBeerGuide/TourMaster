@@ -170,10 +170,10 @@ export default function StickyNavbar() {
             src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
           />
         </Card>
-        <Typography variant="h2" color="blue-gray" className="mb-2">
+        <Typography variant="h1" color="blue-gray" className="my-8 px-4 text-center">
           Prague Beer Tours
         </Typography>
-        <Typography color="gray" className="font-normal">
+        <Typography color="gray" className="px-4 text-justify font-normal text-xl">
         Discover the best hidden local pubs carefully selected by a beer sommelier, and enjoy some of the finest Czech beers in great company.
         </Typography>
       </div>

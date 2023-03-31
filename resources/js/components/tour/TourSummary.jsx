@@ -45,7 +45,7 @@ export default function TourSummary({ tourDescription, tourID, tourhighlights, t
                 <CardBody>
                     <div className="mb-3 flex items-center justify-between">
                         <Typography
-                            variant="h5"
+                            variant="h4"
                             color="blue-gray"
                             className="font-medium"
                         >
@@ -59,7 +59,7 @@ export default function TourSummary({ tourDescription, tourID, tourhighlights, t
                             5.0
                         </Typography>
                     </div>
-                    <Typography color="gray">
+                    <Typography color="gray" className="text-justify">
                         {tourDescription}
                     </Typography>
                     <div className="group mt-8 flex justify-around items-center gap-3">

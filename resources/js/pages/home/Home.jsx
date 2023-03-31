@@ -26,7 +26,7 @@ export default function Home() {
         <>
             <StickyNavbar />
 
-            <div className="flex flex-col-reverse md:flex-row">
+            <div className="flex flex-wrap flex-col md:flex-row">
                 {/* <Testimonial /> */}
                 {tourInfo
                     ? tourInfo.map((tour, id) => (
