@@ -88,8 +88,8 @@ export default function Form({ date, eventId }) {
 
     return (
         <form className="form">
-            <div className="form-container">
-                <div className="header">
+              <div className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
+                    <div className="mb-4 flex flex-col gap-6">
                     <h1>{FormTitles[page]}</h1>
                 </div>
 
@@ -124,7 +124,7 @@ export default function Form({ date, eventId }) {
                             } else {
                                 setPage((currPage) => currPage + 1);
                             }
-                        }}
+                        }} className="flex w-max gap-4" 
                     >
                         {page === FormTitles.length - 1 ? "Submit" : "Next"}
                     </Button>
