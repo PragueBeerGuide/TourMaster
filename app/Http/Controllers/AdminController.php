@@ -2,35 +2,88 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Permission;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    public function show(int $id)
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
-        $user = User::find($id);
-
-        return view(
-            'admin.show_admin',
-            compact('user')
-        );
+        $admins = User::all();
+        return view('admin.admin.index', compact('admins'));
     }
 
-    public function store(Request $request, int $id)
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'permission' => 'required | numeric'
+        return view('admin.admin.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $storeData = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|max:255',
+            'password' => 'required|max:255',
+            'permission_id' => 'required|max:255'
         ]);
+        $permission = Permission::where('name', $storeData['permission_id'])->get();
+        $storeData['password'] = Hash::make($storeData['password']);
+        $storeData['permission_id'] = $permission[0]->id;
+        $admin = User::create($storeData);
+        return redirect('/admins')->with('success', 'New admin has been saved');
+    }
 
-        $user = User::find($id);
-        $user->name = $request->post('name');
-        $user->permission_id = $request->post('permission');
-        $user->save();
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
 
-        session()->flash('success_message', 'Admin has been successfully saved');
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        $admin = User::findOrFail($id);
+        return view('admin.admin.edit', compact('admin'));
+    }
 
-        return redirect()->route('show-admin', ['id' => $id]);
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        $updateData = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|max:255',
+            'permission_id' => 'required|max:255'
+        ]);
+        $permission = Permission::where('name', $updateData['permission_id'])->get();
+        $updateData['permission_id'] = $permission[0]->id;
+        User::whereId($id)->update($updateData);
+        return redirect('/admins')->with('success', 'Admin has been updated');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        $admin = User::findOrFail($id);
+        $admin->delete();
+        return redirect('/admins')->with('danger', 'Admin has been deleted');
     }
 }
