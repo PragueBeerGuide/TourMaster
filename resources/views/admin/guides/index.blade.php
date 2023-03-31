@@ -1,7 +1,9 @@
 @extends('layouts.main')
 
 @section('content')
-
+  <div class="row">
+    <a href="/home" class="btn btn-sm btn-info col-sm-2 mx-5" role="button">Go back</a>
+  </div>
   <div>
     @if(session()->get('success'))
       <div class="alert alert-success">
@@ -13,28 +15,20 @@
       <thead>
           <tr class="table-warning">
             <td>ID</td>
-            <td>Customer</td>
-            <td>Event</td>
-            <td>Participants</td>
-            <td>Extra hotel pick</td>
-            <td>Extra drink package</td>
-            <td>Merchandise</td>
+            <td>First name</td>
+            <td>Last name</td>
             <td class="text-center">Action</td>
           </tr>
       </thead>
       <tbody>
-          @foreach($booking as $bookings)
+          @foreach($guide as $guides)
           <tr>
-              <td>{{$bookings->id}}</td>
-              <td>{{$bookings->customer->name}}</td>
-              <td>{{$bookings->event_id}}</td>
-              <td>{{$bookings->num_of_pax}}</td>
-              <td>{{$bookings->extra_hotel_pick_up}}</td>
-              <td>{{$bookings->extra_drink_package}}</td>
-              <td>{{$bookings->merchandise_id}}</td>
+              <td>{{$guides->id}}</td>
+              <td>{{$guides->first_name}}</td>
+              <td>{{$guides->last_name}}</td>
               <td class="text-center">
-                  <a href="{{ route('bookings.edit', $bookings->id)}}" class="btn btn-primary btn-sm">Edit</a>
-                  <form action="{{ route('bookings.destroy', $bookings->id)}}" method="post" style="display: inline-block">
+                  <a href="{{ route('guides.edit', $guides->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                  <form action="{{ route('guides.destroy', $guides->id)}}" method="post" style="display: inline-block">
                       @csrf
                       @method('DELETE')
                       <button 
@@ -52,6 +46,6 @@
     </table>
   <div>
   <div class="row">
-    <a href="/bookings/create" class="btn btn-sm btn-info col-sm-2 mx-5" role="button">Add new booking</a>
+    <a href="/guides/create" class="btn btn-sm btn-info col-sm-2 mx-5" role="button">Add new guide</a>
   </div>
 @endsection

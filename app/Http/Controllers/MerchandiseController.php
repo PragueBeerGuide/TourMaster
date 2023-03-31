@@ -13,8 +13,7 @@ class MerchandiseController extends Controller
     public function index()
     {
         $merchandise = Merchandise::all();
-        return view('admin.merchandises_index', compact('merchandise'));
-
+        return view('admin.merchandises.index', compact('merchandise'));
     }
 
     /**
@@ -22,7 +21,7 @@ class MerchandiseController extends Controller
      */
     public function create()
     {
-        return view('admin.merchandises_create');
+        return view('admin.merchandises.create');
     }
 
     /**
@@ -51,7 +50,7 @@ class MerchandiseController extends Controller
     public function edit(string $id)
     {
         $merchandise = Merchandise::findOrFail($id);
-        return view('admin.merchandises_edit', compact('merchandise'));
+        return view('admin.merchandises.edit', compact('merchandise'));
     }
 
     /**
@@ -72,8 +71,7 @@ class MerchandiseController extends Controller
     public function destroy(string $id)
     {
         $merchandise = Merchandise::findOrFail($id);
-        $merchandise -> delete();
+        $merchandise->delete();
         return redirect('/merchandises')->with('danger', 'Merchandise has been deleted');
     }
 }
-

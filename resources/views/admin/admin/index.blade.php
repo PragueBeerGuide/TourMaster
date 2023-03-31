@@ -1,7 +1,9 @@
 @extends('layouts.main')
 
 @section('content')
-
+  <div class="row">
+    <a href="/home" class="btn btn-sm btn-info col-sm-2 mx-5" role="button">Go back</a>
+  </div>
   <div>
     @if(session()->get('success'))
       <div class="alert alert-success">
@@ -13,18 +15,22 @@
       <thead>
           <tr class="table-warning">
             <td>ID</td>
-            <td>Name</td>
+            <td>name</td>
+            <td>email</td>
+            <td>permission</td>
             <td class="text-center">Action</td>
           </tr>
       </thead>
       <tbody>
-          @foreach($merchandise as $merchandises)
+          @foreach($admins as $admin)
           <tr>
-              <td>{{$merchandises->id}}</td>
-              <td>{{$merchandises->name}}</td>
+              <td>{{$admin->id}}</td>
+              <td>{{$admin->name}}</td>
+              <td>{{$admin->email}}</td>
+              <td>{{$admin->permission->name}}</td>
               <td class="text-center">
-                  <a href="{{ route('merchandises.edit', $merchandises->id)}}" class="btn btn-primary btn-sm">Edit</a>
-                  <form action="{{ route('merchandises.destroy', $merchandises->id)}}" method="post" style="display: inline-block">
+                  <a href="{{ route('admins.edit', $admin->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                  <form action="{{ route('admins.destroy', $admin->id)}}" method="post" style="display: inline-block">
                       @csrf
                       @method('DELETE')
                       <button 
@@ -42,6 +48,6 @@
     </table>
   <div>
   <div class="row">
-    <a href="/merchandises/create" class="btn btn-sm btn-info col-sm-2 mx-5" role="button">Add new merchandise</a>
+    <a href="/admins/create" class="btn btn-sm btn-info col-sm-2 mx-5" role="button">Add new admin</a>
   </div>
 @endsection
