@@ -22,14 +22,8 @@ export default function PersonalInfo({ formData, setFormData }) {
             <Card color="transparent" shadow={false}>
                 <div className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
                     <div className="mb-4 flex flex-col gap-6"></div>
-                    {eventInfo
-                        ? eventInfo.map((event) => (
-                              <div>
-                                  Starts at:{event.start.split(" ")[1]} - Ends at:{event.end.split(" ")[1]}...
-                                  if it ends at all!
-                              </div>
-                          ))
-                        : "Loading events"}
+                    Starts at: 18:00 - Ends at: 19:00
+                             
 
                     <div>
                         Adults 400 kč:&nbsp;&nbsp;
