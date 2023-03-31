@@ -7,7 +7,7 @@ export default function PersonalInfo({ formData, setFormData }) {
     const [eventInfo, setEventInfo] = useState([]);
     const getData = async () => {
         try {
-            const response = await axios.get("http://tourmaster.test/events");
+            const response = await axios.get(`${window.location.origin}`);
             setEventInfo(response.data);
         } catch (error) {
             console.log(error.response);

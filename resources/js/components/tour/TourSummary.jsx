@@ -32,20 +32,20 @@ export default function TourSummary({ tourDescription, tourID, tourhighlights, t
     };
 
     return (
-        <div className="w-full max-w-[30rem] shadow-lg">
+        <div className="w-full max-w-[30rem] shadow-lg mx-auto mt-10 md:mx-4">
             <Card>
                 <CardHeader floated={false} color="blue-gray">
                     <img
                         src={tourImage}
                         alt="tour main image"
-                        style={{ width: "100%", height: 200, objectFit: "cover" }}
+                        style={{ width: 450, height: 240, objectFit: "cover" }}
                     />
                     <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
                 </CardHeader>
                 <CardBody>
                     <div className="mb-3 flex items-center justify-between">
                         <Typography
-                            variant="h5"
+                            variant="h4"
                             color="blue-gray"
                             className="font-medium"
                         >
@@ -59,11 +59,11 @@ export default function TourSummary({ tourDescription, tourID, tourhighlights, t
                             5.0
                         </Typography>
                     </div>
-                    <Typography color="gray">
+                    <Typography color="gray" className="text-justify">
                         {tourDescription}
                     </Typography>
                     <div className="group mt-8 flex justify-around items-center gap-3">
-                        <Tooltip content="$59 per person">
+                        <Tooltip content="Group discounts">
                             <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
                                 <BanknotesIcon className="h-6 w-6" />
                             </span>

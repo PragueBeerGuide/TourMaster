@@ -26,6 +26,7 @@ export default function ListOfEvents({ date, tourId, setTourId }) {
             const response = await axios.get(
                 `${window.location.origin}/events/${tourId}/${formatedDate}`
             );
+            console.log(window.location.origin);
             setEvents(response.data);
         } catch (error) {
             console.log(error.response);

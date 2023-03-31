@@ -27,7 +27,7 @@ class TourSeeder extends Seeder
     
                 'name' => 'PVT BT',
                 'title' => 'Private Beer Tour', 
-                'description'=> 'Let your private group indulge into the world of real czech pubs. You will be guided by a local beer expert that knows all the secret venues and make sure you will skip all the tourist traps on the way. Starting time on your request.',
+                'description'=> 'Let your private group indulge into the world of real czech pubs. You will be guided by a local beer expert that knows all the secret venues and make sure you will skip all the tourist traps on the way. Great for celebratitions, team-buildings and bachelor parties!',
                 'highlights' => 'drink beer, learn the local pub culture, exclusive tour only for your group',
                 'meeting_point' => 'Old Town Square, Prague',
                 'inclusions' => 'tasting of 6 different beers, knowledgable beer expert guide, map of the best beer venues in Prague',

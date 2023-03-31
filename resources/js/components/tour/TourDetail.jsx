@@ -6,22 +6,22 @@ import {
     TabPanel,
   } from "@material-tailwind/react";
    
-  export default function TourDetail({ tourhighlights, tourInclusions, tourMeeting, }) {
+  export default function TourDetail({ tourhighlights, tourInclusions, tourMeeting }) {
     const data = [
       {
         label: "Highlights",
-        value: "highlightes",
-        desc: {tourhighlights},
+        value: "highlights",
+        desc: tourhighlights,
       },
       {
         label: "Meeting point",
         value: "meeting-point",
-        desc: {tourMeeting},
+        desc: tourMeeting,
       },
       {
         label: "Inclusions",
         value: "inclusions",
-        desc: {tourInclusions},
+        desc: tourInclusions,
       },
     ];
    

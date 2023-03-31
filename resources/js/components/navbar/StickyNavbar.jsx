@@ -42,7 +42,7 @@ export default function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="/beer-tours" className="flex items-center">
+        <a href="#beer-tours" className="flex items-center">
           Tours
         </a>
       </Typography>
@@ -52,7 +52,7 @@ export default function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="cursor-not-allowed flex items-center">
+        <a href="/" className="cursor-not-allowed flex items-center">
           Blog
         </a>
       </Typography>
@@ -62,7 +62,7 @@ export default function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="cursor-not-allowed flex items-center">
+        <a href="/" className="cursor-not-allowed flex items-center">
           About
         </a>
       </Typography>
@@ -72,7 +72,7 @@ export default function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="cursor-not-allowed flex items-center">
+        <a href="/" className="cursor-not-allowed flex items-center">
           Contact
         </a>
       </Typography>
@@ -162,7 +162,7 @@ export default function StickyNavbar() {
           </a>
         </MobileNav>
       </Navbar>
-      <div className="mx-auto max-w-screen-md py-12">
+      <div className="mx-auto max-w-screen-md">
         <Card className="mb-12 overflow-hidden">
           <img
             alt="nature"
@@ -170,11 +170,11 @@ export default function StickyNavbar() {
             src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
           />
         </Card>
-        <Typography variant="h2" color="blue-gray" className="mb-2">
+        <Typography variant="h1" className="my-8 px-4 text-center text-indigo-600">
           Prague Beer Tours
         </Typography>
-        <Typography color="gray" className="font-normal">
-        Discover the best hidden local pubs carefully selected by a beer sommelier, and enjoy some of the finest Czech beers in great company.
+        <Typography color="gray" className="px-4 text-justify font-normal text-xl leading-8">
+          Unique beer city tours, professional beer tastings, fun team-buildings and much more. We are a small company with a clear mission - to share the love of our beer with the world while caring about the local community of Prague. We understand the unique needs you have as a traveller and we will make sure you have amazing time in the capital of our Beer Nation.
         </Typography>
       </div>
     </>
