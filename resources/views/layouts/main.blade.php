@@ -20,7 +20,7 @@
 <body>
 
     <div class="main-content">
-     
+    
     @include('common.allerts')
 
     @yield('content')

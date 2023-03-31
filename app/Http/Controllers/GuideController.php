@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Models\Guide;
 // use SweetAlert;
@@ -13,8 +14,7 @@ class GuideController extends Controller
     public function index()
     {
         $guide = Guide::all();
-        return view('admin.guides_index', compact('guide'));
-
+        return view('admin.guides.index', compact('guide'));
     }
 
     /**
@@ -22,7 +22,7 @@ class GuideController extends Controller
      */
     public function create()
     {
-        return view('admin.guides_create');
+        return view('admin.guides.create');
     }
 
     /**
@@ -52,7 +52,7 @@ class GuideController extends Controller
     public function edit(string $id)
     {
         $guide = Guide::findOrFail($id);
-        return view('admin.guides_edit', compact('guide'));
+        return view('admin.guides.edit', compact('guide'));
     }
 
     /**
@@ -74,7 +74,7 @@ class GuideController extends Controller
     public function destroy(string $id)
     {
         $guide = Guide::findOrFail($id);
-        $guide -> delete();
+        $guide->delete();
         return redirect('/guides')->with('danger', 'Guide has been deleted');
     }
 }

@@ -15,7 +15,7 @@ class BookingController extends Controller
     public function index()
     {
         $booking = Booking::all();
-        return view('admin.bookings_index', compact('booking'));
+        return view('admin.bookings.index', compact('booking'));
     }
 
     /**
@@ -24,7 +24,7 @@ class BookingController extends Controller
     public function create()
     {
 
-        return view('admin.bookings_create');
+        return view('admin.bookings.create');
     }
 
     /**
@@ -34,11 +34,11 @@ class BookingController extends Controller
     {
         $storeData = $request->validate([
             'customer_id' => 'required|integer',
-            'event_id'=> 'required|integer',
-            'num_of_pax'=> 'required|integer|max:4',
+            'event_id' => 'required|integer',
+            'num_of_pax' => 'required|integer|max:4',
             'extra_hotel_pick_up' => 'nullable',
-            'extra_drink_package'=> 'nullable',
-            'merchandise_id'=> 'nullable',
+            'extra_drink_package' => 'nullable',
+            'merchandise_id' => 'nullable',
         ]);
         $booking = Booking::create($storeData);
         return redirect('/bookings')->with('success', 'New booking has been saved');
@@ -58,7 +58,7 @@ class BookingController extends Controller
     public function edit(string $id)
     {
         $booking = Booking::findOrFail($id);
-        return view('admin.bookings_edit', compact('booking'));
+        return view('admin.bookings.edit', compact('booking'));
     }
 
     /**
@@ -68,11 +68,11 @@ class BookingController extends Controller
     {
         $updateData = $request->validate([
             'customer_id' => 'required|integer',
-            'event_id'=> 'required|integer',
-            'num_of_pax'=> 'required|integer|max:4',
+            'event_id' => 'required|integer',
+            'num_of_pax' => 'required|integer|max:4',
             'extra_hotel_pick_up' => 'nullable',
-            'extra_drink_package'=> 'nullable',
-            'merchandise_id'=> 'nullable',
+            'extra_drink_package' => 'nullable',
+            'merchandise_id' => 'nullable',
         ]);
         Booking::whereId($id)->update($updateData);
         return redirect('/bookings')->with('success', 'booking has been updated');
