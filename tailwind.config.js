@@ -14,6 +14,11 @@ module.exports = withMT({
   
   ],
   theme: {
+    colors: {
+      primary: '#3b44ac',
+      'logo-t': '#3b44ac',
+      'logo-bg': '#ff8136',
+    },
     screens: {
       'sm': '420px',
       // => @media (min-width: 420px) { ... }
