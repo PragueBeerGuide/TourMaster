@@ -22,10 +22,10 @@ export default function PersonalInfo({ formData, setFormData }) {
             <Card color="transparent" shadow={false}>
                 <div className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
                     <div className="mb-4 flex flex-col gap-6"></div>
-
-                    <strong>Starts:</strong> 18:00 - <strong>Ends:</strong> 19:00
-                             
-                    <div>
+                    <div className="flex justify-center m-5">
+                    <strong>Starts:</strong> 18:00 -  <strong>Ends:</strong> 19:00
+                    </div>
+                    <div className="flex justify-center m-5">
                         Adults 400 kč:&nbsp;&nbsp;
                         <Updater
                             setCount={() =>

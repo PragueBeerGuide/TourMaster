@@ -10,7 +10,7 @@ export default function ListOfEvents({ date, tourId, setTourId }) {
     const [eventId, setEventId] = useState(0);
     const [displayForm, setDisplayForm] = useState(false);
     const formatedDate = moment(date).format("Y-MM-DD HH:mm:ss").split(" ")[0];
-    // const time = moment(date).format("Y-MM-DD HH:mm").split(" ")[1];
+    const time = moment(date).format("Y-MM-DD HH:mm").split(" ")[1];
 
     const handleClick = (capacity, id) => {
         if (capacity === 10) {
