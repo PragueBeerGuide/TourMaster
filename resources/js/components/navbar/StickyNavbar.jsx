@@ -173,8 +173,8 @@ export default function StickyNavbar() {
         <Typography variant="h1" className="my-8 px-4 text-center text-indigo-600">
           Prague Beer Tours
         </Typography>
-        <Typography color="gray" className="px-4 text-justify font-normal text-xl">
-        Discover the best hidden local pubs carefully selected by a beer sommelier, and enjoy some of the finest Czech beers in great company.
+        <Typography color="gray" className="px-4 text-justify font-normal text-xl leading-8">
+          Unique beer city tours, professional beer tastings, fun team-buildings and much more. We are a small company with a clear mission - to share the love of our beer with the world while caring about the local community of Prague. We understand the unique needs you have as a traveller and we will make sure you have amazing time in the capital of our Beer Nation.
         </Typography>
       </div>
     </>
