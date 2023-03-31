@@ -94,7 +94,7 @@ export default function Form({ date, eventId }) {
                 </div>
 
                 <div className="body">{PageDisplay()}</div>
-                <div className="footer">
+                <div className="footer flex w-max gap-4">
                     <Button
                         disabled={page == 0}
                         onClick={() => {
@@ -124,7 +124,7 @@ export default function Form({ date, eventId }) {
                             } else {
                                 setPage((currPage) => currPage + 1);
                             }
-                        }} className="flex w-max gap-4" 
+                        }} 
                     >
                         {page === FormTitles.length - 1 ? "Submit" : "Next"}
                     </Button>
