@@ -32,13 +32,13 @@ export default function TourSummary({ tourDescription, tourID, tourhighlights, t
     };
 
     return (
-        <div className="w-full max-w-[30rem] shadow-lg">
+        <div className="w-full max-w-[30rem] shadow-lg m-4">
             <Card>
                 <CardHeader floated={false} color="blue-gray">
                     <img
                         src={tourImage}
                         alt="tour main image"
-                        style={{ width: "100%", height: 200, objectFit: "cover" }}
+                        style={{ width: 450, height: 240, objectFit: "cover" }}
                     />
                     <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
                 </CardHeader>
