@@ -32,7 +32,7 @@ export default function TourSummary({ tourDescription, tourID, tourhighlights, t
     };
 
     return (
-        <div className="w-full max-w-[30rem] shadow-lg m-4">
+        <div className="w-full max-w-[30rem] shadow-lg mx-auto mt-10 md:mx-4">
             <Card>
                 <CardHeader floated={false} color="blue-gray">
                     <img
@@ -63,7 +63,7 @@ export default function TourSummary({ tourDescription, tourID, tourhighlights, t
                         {tourDescription}
                     </Typography>
                     <div className="group mt-8 flex justify-around items-center gap-3">
-                        <Tooltip content="$59 per person">
+                        <Tooltip content="Group discounts">
                             <span className="cursor-pointer rounded-full border border-blue-500/5 bg-blue-500/5 p-3 text-blue-500 transition-colors hover:border-blue-500/10 hover:bg-blue-500/10 hover:!opacity-100 group-hover:opacity-70">
                                 <BanknotesIcon className="h-6 w-6" />
                             </span>

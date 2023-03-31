@@ -42,7 +42,7 @@ export default function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="/beer-tours" className="flex items-center">
+        <a href="#beer-tours" className="flex items-center">
           Tours
         </a>
       </Typography>
@@ -52,7 +52,7 @@ export default function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="cursor-not-allowed flex items-center">
+        <a href="/" className="cursor-not-allowed flex items-center">
           Blog
         </a>
       </Typography>
@@ -62,7 +62,7 @@ export default function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="cursor-not-allowed flex items-center">
+        <a href="/" className="cursor-not-allowed flex items-center">
           About
         </a>
       </Typography>
@@ -72,7 +72,7 @@ export default function StickyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="cursor-not-allowed flex items-center">
+        <a href="/" className="cursor-not-allowed flex items-center">
           Contact
         </a>
       </Typography>
@@ -162,7 +162,7 @@ export default function StickyNavbar() {
           </a>
         </MobileNav>
       </Navbar>
-      <div className="mx-auto max-w-screen-md py-12">
+      <div className="mx-auto max-w-screen-md">
         <Card className="mb-12 overflow-hidden">
           <img
             alt="nature"
@@ -170,7 +170,7 @@ export default function StickyNavbar() {
             src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
           />
         </Card>
-        <Typography variant="h1" color="blue-gray" className="my-8 px-4 text-center">
+        <Typography variant="h1" className="my-8 px-4 text-center text-indigo-600">
           Prague Beer Tours
         </Typography>
         <Typography color="gray" className="px-4 text-justify font-normal text-xl">
