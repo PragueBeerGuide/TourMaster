@@ -76,30 +76,60 @@
             selectHelper: true,
             select:function(start, end, allDay)
             {
-                var title = prompt('Event Title:');
-    
-                if(title)
-                {
-                    var start = $.fullCalendar.formatDate(start, 'Y-MM-DD HH:mm:ss');
-    
-                    var end = $.fullCalendar.formatDate(end, 'Y-MM-DD HH:mm:ss');
-    
-                    $.ajax({
-                        url:"/events/action",
-                        type:"POST",
-                        data:{
-                            title: title,
-                            start: start,
-                            end: end,
-                            type: 'add'
-                        },
-                        success:function(data)
+                var dialog = document.createElement('div');
+                dialog.innerHTML = '<form id="eventForm">' +
+                    '<label for="title">Title:</label>' +
+                    '<input type="text" id="title" name="title"><br><br>' +
+                    '<label for="start">Start:</label>' +
+                    '<input type="datetime-local" id="start" name="start" value="' + start.format() + '"><br><br>' +
+                    '<label for="end">End:</label>' +
+                    '<input type="datetime-local" id="end" name="end" value="' + end.format() + '"><br><br>' +
+                    '<label for="price">Price:</label>' +
+                    '<input type="number" id="price" name="price"><br><br>' +
+                    '<label for="capacity">Capacity:</label>' +
+                    '<input type="number" id="capacity" name="capacity"><br><br>' +
+                    '<label for="tour_id">Tour ID:</label>' +
+                    '<input type="number" id="tour_id" name="tour_id"><br><br>' +
+                    '</form>';
+
+                $(dialog).dialog({
+                    title: 'Create Event',
+                    modal: true,
+                    buttons: [
                         {
-                            calendar.fullCalendar('refetchEvents');
-                            alert("Event Created Successfully");
+                            text: "Save",
+                            click: function() {
+                                var form = $('#eventForm');
+                                var title = form.find('input[name="title"]').val();
+                                var start = form.find('input[name="start"]').val();
+                                var end = form.find('input[name="end"]').val();
+                                var price = form.find('input[name="price"]').val();
+                                var capacity = form.find('input[name="capacity"]').val();
+                                var tour_id = form.find('input[name="tour_id"]').val();
+
+                                $.ajax({
+                                    url:"/events/action",
+                                    type:"POST",
+                                    data:{
+                                        title: title,
+                                        start: start,
+                                        end: end,
+                                        price: price,
+                                        capacity: capacity,
+                                        tour_id: tour_id,
+                                        type: 'add'
+                                    },
+                                    success:function(data)
+                                    {
+                                        calendar.fullCalendar('refetchEvents');
+                                        alert("Event Created Successfully");
+                                    }
+                                });
+                                $(this).dialog('close');
+                            }
                         }
-                    })
-                }
+                    ]
+                });
             },
             editable:true,
             eventResize: function(event, delta)
