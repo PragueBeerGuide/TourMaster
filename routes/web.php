@@ -51,11 +51,8 @@ Route::post('/booking/CustomerCreate', [BookingController::class, 'CustomerCreat
 
 Route::post('/customer/action', [CustomerController::class, 'action'])->name('customer-action');
 
-Route::get('/show-admin/{id}', [AdminController::class, 'show'])->name('show-admin');
-
-Route::post('/store-admin/edit/{id}', [AdminController::class, 'store'])->name('store-admin');
-
 Route::resource('bookings', BookingController::class)->middleware('auth');
 Route::resource('guides', GuideController::class)->middleware('auth');
 Route::resource('merchandises', MerchandiseController::class)->middleware('auth');
 Route::resource('tours', TourController::class)->middleware('auth');
+Route::resource('admins', AdminController::class)->middleware('auth');

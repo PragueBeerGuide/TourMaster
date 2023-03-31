@@ -15,20 +15,28 @@
       <thead>
           <tr class="table-warning">
             <td>ID</td>
-            <td>Name</td>
-            <td>PVT</td>
+            <td>Customer</td>
+            <td>Event</td>
+            <td>Participants</td>
+            <td>Extra hotel pick</td>
+            <td>Extra drink package</td>
+            <td>Merchandise</td>
             <td class="text-center">Action</td>
           </tr>
       </thead>
       <tbody>
-          @foreach($tour as $tours)
+          @foreach($booking as $bookings)
           <tr>
-              <td>{{$tours->id}}</td>
-              <td>{{$tours->name}}</td>
-              <td>{{$tours->is_private === 0 ? 'not private' : 'private'}}</td>
+              <td>{{$bookings->id}}</td>
+              <td>{{$bookings->customer->name}}</td>
+              <td>{{$bookings->event_id}}</td>
+              <td>{{$bookings->num_of_pax}}</td>
+              <td>{{$bookings->extra_hotel_pick_up}}</td>
+              <td>{{$bookings->extra_drink_package}}</td>
+              <td>{{$bookings->merchandise_id}}</td>
               <td class="text-center">
-                  <a href="{{ route('tours.edit', $tours->id)}}" class="btn btn-primary btn-sm">Edit</a>
-                  <form action="{{ route('tours.destroy', $tours->id)}}" method="post" style="display: inline-block">
+                  <a href="{{ route('bookings.edit', $bookings->id)}}" class="btn btn-primary btn-sm">Edit</a>
+                  <form action="{{ route('bookings.destroy', $bookings->id)}}" method="post" style="display: inline-block">
                       @csrf
                       @method('DELETE')
                       <button 
@@ -46,6 +54,6 @@
     </table>
   <div>
   <div class="row">
-    <a href="/tours/create" class="btn btn-sm btn-info col-sm-2 mx-5" role="button">Add new tour</a>
+    <a href="/bookings/create" class="btn btn-sm btn-info col-sm-2 mx-5" role="button">Add new booking</a>
   </div>
 @endsection
