@@ -4,10 +4,11 @@ import { Dashboard, Auth } from "../layouts";
 import Home from "../pages/home/Home";
 import Tours from "../pages/tours/Tours";
 
-function App() {
+
+function App({tourTitle}) {
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home tourTitle={tourTitle}/>} />
             <Route path="/calendar/:tourId" element={<CustomCalendar />} />
 
             <Route path="/beer-tours" element={<Tours />} />
