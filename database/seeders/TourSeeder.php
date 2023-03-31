@@ -17,7 +17,7 @@ class TourSeeder extends Seeder
             [
                 'name' => 'Public BT',
                 'title' => 'Walking Beer Tour', 
-                'description'=> 'Discover the best hidden local pubs carefully selected by a beer sommelier and enjoy some of the finest Czech beers in great company. Meet other travellers and enjoy this beer discovery tour in a small group size withour any huge crowds',
+                'description'=> 'Discover the best hidden local pubs carefully selected by a beer sommelier and enjoy some of the finest Czech beers in great company. Meet other travellers and enjoy this beer discovery tour in a small group size withour any huge crowds.',
                 'highlights' => 'drink beer, learn the local pub culture, meet other beer-loving travellers',
                 'meeting_point' => 'Old Town Square, Prague',
                 'inclusions' => 'tasting of 6 different beers, knowledgable beer expert gudie, map of the best beer venues in Prague',

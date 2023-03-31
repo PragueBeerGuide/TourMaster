@@ -37,6 +37,8 @@ export default function ListOfEvents({ date, tourId, setTourId }) {
         console.log(events);
     }, [date]);
 
+    console.log(time);
+
     return (
         <div>
             <>
