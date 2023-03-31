@@ -17,7 +17,7 @@ class TourSeeder extends Seeder
             [
                 'name' => 'Public BT',
                 'title' => 'Walking Beer Tour', 
-                'description'=> 'Discover the best hidden local pubs carefully selected by a beer sommelier and enjoy some of the finest Czech beers in great company.',
+                'description'=> 'Discover the best hidden local pubs carefully selected by a beer sommelier and enjoy some of the finest Czech beers in great company. Meet other travellers and enjoy this beer discovery tour in a small group size withour any huge crowds',
                 'highlights' => 'drink beer, learn the local pub culture, meet other beer-loving travellers',
                 'meeting_point' => 'Old Town Square, Prague',
                 'inclusions' => 'tasting of 6 different beers, knowledgable beer expert gudie, map of the best beer venues in Prague',
@@ -27,7 +27,7 @@ class TourSeeder extends Seeder
     
                 'name' => 'PVT BT',
                 'title' => 'Private Beer Tour', 
-                'description'=> 'Discover the best hidden local pubs carefully selected by a beer sommelier and enjoy some of the finest Czech beers in great company.',
+                'description'=> 'Let your private group indulge into the world of real czech pubs. You will be guided by a local beer expert that knows all the secret venues and make sure you will skip all the tourist traps on the way. Starting time on your request.',
                 'highlights' => 'drink beer, learn the local pub culture, exclusive tour only for your group',
                 'meeting_point' => 'Old Town Square, Prague',
                 'inclusions' => 'tasting of 6 different beers, knowledgable beer expert guide, map of the best beer venues in Prague',
@@ -47,7 +47,7 @@ class TourSeeder extends Seeder
     
                 'name' => 'Heavy drinking',
                 'title' => 'Drink like the Czechs', 
-                'description'=> 'Czechs drink the most beer per capita in the world. Do you think you can keep up? On this experience you will commanded to finish the whole keg of beer in a traditional student way. This unique activity is full of beer drinking, singing and discovering a whole new version of yourselves.',
+                'description'=> 'Czechs drink the most beer per capita in the world. Do you think you can keep up? On this experience you will be commanded to finish the whole keg of beer in a traditional student way. This unique activity is full of beer drinking and singing.',
                 'highlights' => 'unlimited beer, amazing memories (or not), real cultural experience',
                 'meeting_point' => 'Strahov Student Dorms, Prague',
                 'inclusions' => 'unlimited beer, cleaning service, memory beer mug',
