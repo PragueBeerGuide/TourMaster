@@ -29,7 +29,7 @@ Route::get('/calendar/{tourId}', function () {
     return view('welcome');
 });
 
-Route::get('/tours', function () {
+Route::get('/beer-tours', function () {
     return view('welcome');
 });
 

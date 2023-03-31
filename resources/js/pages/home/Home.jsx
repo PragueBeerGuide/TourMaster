@@ -28,8 +28,17 @@ export default function Home() {
             <div className="flex flex-col-reverse md:flex-row">
                 {/* <Testimonial /> */}
                 {tourInfo
-                    ? tourInfo.map((tour) => (
-                          <TourSummary tourName={tour.name} tourID={tour.id} />
+                    ? tourInfo.map((tour, id) => (
+                          <TourSummary
+                            key = {id}
+                            tourID={tour.id}
+                            tourTitle={tour.title} 
+                            tourDescription={tour.description}
+                            tourhighlights={tour.highlights}
+                            tourImage={tour.image_link}
+                            tourInclusions={tour.inclusions}
+                            tourMeeting={tour.meeting_point}
+                          />
                       ))
                     : "Loading events"}
             </div>

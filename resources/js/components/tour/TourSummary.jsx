@@ -23,7 +23,7 @@ import {
     TicketIcon,
 } from "@heroicons/react/24/solid";
 
-export default function TourSummary({ tourName, tourID }) {
+export default function TourSummary({ tourDescription, tourID, tourhighlights, tourImage, tourInclusions, tourMeeting, tourTitle, }) {
     const [openDetails, setOpenDetails] = useState(false);
     const navigate = useNavigate();
 
@@ -36,8 +36,9 @@ export default function TourSummary({ tourName, tourID }) {
             <Card>
                 <CardHeader floated={false} color="blue-gray">
                     <img
-                        src="https://cdn.pixabay.com/photo/2022/11/15/11/31/beer-7593794__480.jpg"
-                        alt="beer tasting"
+                        src={tourImage}
+                        alt="tour main image"
+                        style={{ width: "100%", height: 200, objectFit: "cover" }}
                     />
                     <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
                 </CardHeader>
@@ -48,7 +49,7 @@ export default function TourSummary({ tourName, tourID }) {
                             color="blue-gray"
                             className="font-medium"
                         >
-                            {tourName}
+                            {tourTitle}
                         </Typography>
                         <Typography
                             color="blue-gray"
@@ -59,9 +60,7 @@ export default function TourSummary({ tourName, tourID }) {
                         </Typography>
                     </div>
                     <Typography color="gray">
-                        Discover the best hidden local pubs carefully selected
-                        by a beer sommelier and enjoy some of the finest Czech
-                        beers in great company.
+                        {tourDescription}
                     </Typography>
                     <div className="group mt-8 flex justify-around items-center gap-3">
                         <Tooltip content="$59 per person">
@@ -120,7 +119,17 @@ export default function TourSummary({ tourName, tourID }) {
                     </Button>
                 </CardFooter>
             </Card>
-            {openDetails ? <TourDetail /> : ""}
+
+            {openDetails 
+            ? 
+            <TourDetail 
+            tourhighlights = {tourhighlights}
+            tourInclusions = {tourInclusions}
+            tourMeeting = {tourMeeting}
+            /> 
+            : 
+            ""
+            }
         </div>
     );
 }

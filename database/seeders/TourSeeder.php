@@ -18,17 +18,17 @@ class TourSeeder extends Seeder
                 'name' => 'Public BT',
                 'title' => 'Walking Beer Tour', 
                 'description'=> 'Discover the best hidden local pubs carefully selected by a beer sommelier and enjoy some of the finest Czech beers in great company.',
-                'highlights' => 'drink beer, learnt the local pub culture, meet other beer-loving travellers',
+                'highlights' => 'drink beer, learn the local pub culture, meet other beer-loving travellers',
                 'meeting_point' => 'Old Town Square, Prague',
                 'inclusions' => 'tasting of 6 different beers, knowledgable beer expert gudie, map of the best beer venues in Prague',
-                'image_link' => 'https://cdn.pixabay.com/photo/2022/11/15/11/31/beer-7593794__480.jpg',
+                'image_link' => '/img/tours/product_details/walking_beer_tour.webp',
                 'is_private' => false
             ],[
     
                 'name' => 'PVT BT',
                 'title' => 'Private Beer Tour', 
                 'description'=> 'Discover the best hidden local pubs carefully selected by a beer sommelier and enjoy some of the finest Czech beers in great company.',
-                'highlights' => 'drink beer, learnt the local pub culture, exclusive tour only for your group',
+                'highlights' => 'drink beer, learn the local pub culture, exclusive tour only for your group',
                 'meeting_point' => 'Old Town Square, Prague',
                 'inclusions' => 'tasting of 6 different beers, knowledgable beer expert guide, map of the best beer venues in Prague',
                 'image_link' => 'https://cdn.pixabay.com/photo/2022/11/15/11/31/beer-7593794__480.jpg',
@@ -41,7 +41,7 @@ class TourSeeder extends Seeder
                 'highlights' => 'learnt about different flavours of beer, try the best Czech craft beer, certificate of participation',
                 'meeting_point' => 'Craft Beer Bar, Prague',
                 'inclusions' => 'tasting of 11 beers samples, knowledgable beer sommelier, certificate of participation',
-                'image_link' => 'https://images.unsplash.com/photo-1584225064785-c62a8b43d148?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80',
+                'image_link' => '/img/tours/product_details/beer_judging.jpeg',
                 'is_private' => false
             ],[
     
@@ -51,7 +51,7 @@ class TourSeeder extends Seeder
                 'highlights' => 'unlimited beer, amazing memories (or not), real cultural experience',
                 'meeting_point' => 'Strahov Student Dorms, Prague',
                 'inclusions' => 'unlimited beer, cleaning service, memory beer mug',
-                'image_link' => 'https://images.unsplash.com/photo-1513309914637-65c20a5962e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80',
+                'image_link' => '/img/tours/product_details/cantus.jpeg',
                 'is_private' => false
             ]
             ]);

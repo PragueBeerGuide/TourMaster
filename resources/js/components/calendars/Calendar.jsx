@@ -42,10 +42,16 @@ export default function CustomCalendar() {
                 minDetail="month"
             />
 
-            <p>
+            {/* Info sentance only appears if a specific date is chosen */}
+            {(dateState!= Date())
+            ?
+            <p className="my-4">
                 You've selected{" "}
                 <b>{moment(dateState).format("MMMM Do YYYY")}</b>
             </p>
+            :
+            ""
+            }
 
             {openDetails ? (
                 <>

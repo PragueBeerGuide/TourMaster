@@ -83,13 +83,22 @@ export default function StickyNavbar() {
     <>
       <Navbar className="sticky inset-0 z-10 h-max max-w-full rounded-none py-2 px-4 lg:px-8 lg:py-4">
         <div className="flex items-center justify-between text-blue-gray-900">
-          <Typography
-            as="a"
-            href="/"
-            className="mr-4 cursor-pointer py-1.5 font-medium"
-          >
-            Logo placeholder
-          </Typography>
+            <div className="flex flex-shrink-0 items-center">
+              <a href="/">
+                <img
+                className="block h-8 w-auto lg:hidden"
+                src="/img/logo_horizontal_pureText_color.png"
+                alt="Prague Beer Guides logo"
+                />
+              </a>
+              <a href="/">
+                <img
+                  className="hidden h-8 w-auto lg:block"
+                  src="/img/logo_horizontal_pureText_color.png"
+                  alt="Prague Beer Guides logo"
+                />
+              </a>
+            </div>
           <div className="flex items-center gap-4">
             <div className="mr-4 hidden lg:block">{navList}</div>
             <a href="/login">
@@ -146,7 +155,7 @@ export default function StickyNavbar() {
             <Button 
             variant="gradient" 
             size="sm" fullWidth 
-            className="mb-2" fff
+            className="mb-2"
             >  
               <span>Admin</span>
             </Button>
@@ -167,20 +176,6 @@ export default function StickyNavbar() {
         <Typography color="gray" className="font-normal">
         Discover the best hidden local pubs carefully selected by a beer sommelier, and enjoy some of the finest Czech beers in great company.
         </Typography>
-        <Button size="lg" className="flex justify-center items-center gap-1"
-              onClick={() => setOpenDetails(!openDetails)}
-              > 
-              {!openDetails ?
-              <><ArrowUturnDownIcon className="h-4 w-4"/>Show details</>
-              :
-              <><ArrowUturnUpIcon className="h-4 w-4"/>Hide details</>
-              }
-
-            </Button >
-            {openDetails ?
-        <TourDetail />
-        :
-        ""}
       </div>
     </>
   );
