@@ -12,4 +12,4 @@ TourMaster - online tool for booking custom guided tours and events
 ### Code examples
 
 React component: 
-- **[TourDetail](https://github.com/PragueBeerGuide/TourMaster/blob/main/resources/js/components/tour/TourDetail.jsx) **
+- [TourDetail](https://github.com/PragueBeerGuide/TourMaster/blob/main/resources/js/components/tour/TourDetail.jsx)
